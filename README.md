@@ -1,0 +1,1 @@
+# Launchpad Docker Manifests
