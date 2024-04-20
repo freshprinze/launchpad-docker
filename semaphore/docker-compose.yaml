@@ -1,0 +1,41 @@
+---
+services:
+  mysql:
+    image: mysql:8.0
+    restart: unless-stopped
+
+    hostname: mysql
+
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: semaphore
+      MYSQL_USER: semaphore
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+
+    volumes:
+      - ${SERVICE_DIR}/semaphore-mysql:/var/lib/mysql
+
+  semaphore:
+    depends_on:
+      - mysql
+
+    image: semaphoreui/semaphore:latest
+    restart: unless-stopped
+
+    ports:
+      - 3000:3000
+
+    environment:
+      SEMAPHORE_DB_USER: semaphore
+      SEMAPHORE_DB_PASS: ${MYSQL_PASSWORD}
+      SEMAPHORE_DB_HOST: mysql
+      SEMAPHORE_DB_PORT: 3306
+      SEMAPHORE_DB_DIALECT: mysql
+      SEMAPHORE_DB: semaphore
+      SEMAPHORE_ADMIN_PASSWORD: ${SEMAPHORE_ADMIN_PASSWORD}
+      SEMAPHORE_ADMIN_NAME: serveradmin
+      SEMAPHORE_ADMIN_EMAIL: asiritheinquisitive@gmail.com
+      SEMAPHORE_ADMIN: serveradmin
+
+      # IMPORTANT: use, head -c32 /dev/urandom | base64
+      SEMAPHORE_ACCESS_KEY_ENCRYPTION: ${SEMAPHORE_ACCESS_KEY_ENCRYPTION}

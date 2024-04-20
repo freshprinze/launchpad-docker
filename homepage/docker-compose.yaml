@@ -1,0 +1,17 @@
+services:
+  homepage:
+    image: ghcr.io/gethomepage/homepage:latest
+    container_name: homepage
+
+    ports:
+      - 3000:3000
+
+    environment:
+      - LOG_LEVEL=info
+      - PUID=${USER_ID}
+      - PGID=${GROUP_ID}
+
+    env_file: .env
+
+    volumes:
+      - ${SERVICE_DIR}/config:/app/config

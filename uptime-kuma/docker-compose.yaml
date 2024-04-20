@@ -1,0 +1,28 @@
+---
+networks:
+  discovery:
+    external: true
+
+services:
+  uptime-kuma:
+    image: louislam/uptime-kuma:1
+    restart: unless-stopped
+
+    container_name: uptime-kuma
+
+    networks:
+      - discovery
+
+    volumes:
+      - ${SERVICE_DIR}/data:/app/data
+
+    ports:
+      - 3001:3001
+
+    labels:
+      - 'traefik.enable=true'
+      - 'traefik.http.routers.uptime-kuma.rule=Host(`${SERVICE_URL}`)'
+      - 'traefik.http.routers.uptime-kuma.entrypoints=websecure'
+      - 'traefik.http.routers.uptime-kuma.tls=true'
+      - 'traefik.http.services.uptime-kuma.loadBalancer.server.port=3001'
+      - 'traefik.docker.network=discovery'

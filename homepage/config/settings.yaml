@@ -1,0 +1,86 @@
+---
+# For configuration options and examples, please see:
+# https://gethomepage.dev/latest/configs/settings
+
+title: Homelab
+# headerStyle: boxed
+
+background:
+  image: https://images.unsplash.com/photo-1502790671504-542ad42d5189?auto=format&fit=crop&w=2560&q=80
+  # blur: sm # sm, "", md, xl... see https://tailwindcss.com/docs/backdrop-blur
+  saturate: 100 # 0, 50, 100... see https://tailwindcss.com/docs/backdrop-saturate
+  brightness: 10 # 0, 50, 75... see https://tailwindcss.com/docs/backdrop-brightness
+  opacity: 30 # 0-100
+
+theme: dark
+color: slate
+useEqualHeights: true
+cardBlur: xl
+fiveColumns: true
+
+providers:
+  openweathermap: openweathermapapikey
+  weatherapi: weatherapiapikey
+
+layout:
+  ## ----------- row 1
+  DNS:
+    header: true
+
+  Remote Access:
+    header: true
+
+  Home Automation:
+    header: true
+
+  Security & Identity:
+    header: true
+
+  Monitoring:
+    header: true
+
+  ## ---------- row 2
+  Management:
+    header: true
+    style: row
+    columns: 5
+
+  ## ---------- row 3
+  Network:
+    header: true
+    style: row
+    columns: 5
+
+  ## ---------- row 4
+  Hypervisor:
+    header: true
+
+  Containers:
+    header: true
+
+  Storage:
+    header: true
+
+  ## ----------  row 5
+  Productivity:
+    header: true
+    style: row
+    columns: 5
+
+  ## ----------- row 6
+  Media:
+    header: true
+    style: row
+    columns: 5
+
+  ## ----------- row 7
+  Power:
+    header: true
+    style: row
+    columns: 5
+
+  ## ----------- row 8
+  Other:
+    header: true
+    style: row
+    columns: 5
