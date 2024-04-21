@@ -140,17 +140,17 @@
         description: Main Switch (Mahasen)
 
     - PoE Switch:
-        icon: tp-link.svg
+        icon: tp-link.png
         href: "{{HOMEPAGE_VAR_SWITCH_3_URL}}"
         description: PoE 28-Port Switch (Gajaba)
 
     - 16-Port Switch:
-        icon: tp-link.svg
+        icon: tp-link.png
         href: "{{HOMEPAGE_VAR_SWITHC_4_URL}}"
         description: 16-Port Switch (Ravana)
 
     - 8-Port Switch:
-        icon: tp-link.svg
+        icon: tp-link.png
         href: "{{HOMEPAGE_VAR_SWITCH_5_URL}}"
         description: firewall
 
