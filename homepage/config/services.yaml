@@ -79,6 +79,11 @@
         icon: https://play-lh.googleusercontent.com/cUrv0t00FYQ1GKLuOTvv8qjo1lSDjqZC16IOp3Fb6ijew6Br5m4o16HhDp0GBu_Bw8Y=w240-h480-rw
         href: https://uptimerobot.com/dashboard
         description: External
+        widget:
+          type: uptimerobot
+          fields: ["sitesUp", "sitesDown"]
+          url: https://api.uptimerobot.com
+          key: "{{HOMEPAGE_VAR_UPTIME_ROBOT_API_KEY}}"
 
     - PiAlert:
         icon: pialert.svg
