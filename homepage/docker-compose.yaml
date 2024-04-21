@@ -1,3 +1,4 @@
+---
 services:
   homepage:
     image: ghcr.io/gethomepage/homepage:latest
@@ -15,3 +16,4 @@ services:
 
     volumes:
       - ${SERVICE_DIR}/config:/app/config
+      - ${SERVICE_DIR}/icons:/app/public/icons

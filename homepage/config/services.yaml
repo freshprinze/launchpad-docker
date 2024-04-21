@@ -86,7 +86,7 @@
           key: "{{HOMEPAGE_VAR_UPTIME_ROBOT_API_KEY}}"
 
     - PiAlert:
-        icon: pialert.svg
+        icon: pi-alert.png
         href: "{{HOMEPAGE_VAR_PIALERT_URL}}"
 
     - Grafana:
@@ -152,15 +152,15 @@
     - 8-Port Switch:
         icon: tp-link.png
         href: "{{HOMEPAGE_VAR_SWITCH_5_URL}}"
-        description: firewall
+        description: 8-Port Switch
 
     - 8-Port Desk Switch:
-        icon: mokerlink.svg
+        icon: /icons/mokerlink.png
         href: "{{HOMEPAGE_VAR_SWITCH_6_URL}}"
         description: Desktop Switch (Gamunu)
 
     - Groud Floor PoE Switch:
-        icon: tplink.svg
+        icon: /icons/mokerlink.png
         href: "{{HOMEPAGE_VAR_SWITCH_7_URL}}"
         description: Groud Floor PoE Switch
 
@@ -175,10 +175,12 @@
         description: Omada Management Controller
 
     - 4G Router:
+        icon: /icons/slt-mobitel.png
         href: "{{HOMEPAGE_VAR_ROUTER_1_URL}}"
         description: 4G Router
 
     - Fibre Router:
+        icon: /icons/slt-mobitel.png    
         href: "{{HOMEPAGE_VAR_ROUTER_2_URL}}"
         description: Fibre Router
 
@@ -272,7 +274,7 @@
         description: NextCloud
 
     - Snipe-IT:
-        icon: snipeit.svg
+        icon: snipe-it.png
         href: "{{HOMEPAGE_VAR_SNIPEIT_URL}}"
         description: Home Inventory Management
 
@@ -318,20 +320,20 @@
         icon: overseerr.svg
 
     - qBitTorrent:
-        icon: qbitorrent.svg
+        icon: qbittorrent.svg
 
     - Tdarr:
-        icon: tdarr.svg
+        icon: tdarr.png
 
 ## ----------------------------------------------------------------------- row 6
 - Power:
     - UPS-01:
-        icon: cyberpower.svg
+        icon: /icons/cyberpower.svg
         href: "{{HOMEPAGE_VAR_UPS_1_URL}}"
         description: CyberPower UPS
 
     - PDU-01:
-        icon: cyberpower.svg
+        icon: /icons/cyberpower.svg
         href: "{{HOMEPAGE_VAR_PDU_1_URL}}"
         description: CyberPower PDU
 
