@@ -1,4 +1,6 @@
 .env
+logs
+*.log
 
 # Created by https://www.toptal.com/developers/gitignore/api/visualstudiocode,git
 # Edit at https://www.toptal.com/developers/gitignore?templates=visualstudiocode,git
