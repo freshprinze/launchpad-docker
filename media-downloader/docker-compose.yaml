@@ -1,3 +1,4 @@
+---
 services:
   # gluetun:
   #   image: qmcgaw/gluetun
@@ -39,7 +40,7 @@ services:
     restart: unless-stopped
 
     ports:
-      - '9696:9696'
+      - "9696:9696"
 
     environment:
       - PUID=${USER_ID}
@@ -50,7 +51,7 @@ services:
       - ${SERVICE_DIR}/prowlarr:/config
 
     healthcheck:
-      test: ['CMD', 'curl', '--fail', 'http://127.0.0.1:9696/prowlarr/ping']
+      test: ["CMD", "curl", "--fail", "http://127.0.0.1:9696/prowlarr/ping"]
       interval: 30s
       retries: 10
 
@@ -60,7 +61,7 @@ services:
     restart: unless-stopped
 
     ports:
-      - '8989:8989' # port mapping
+      - "8989:8989" # port mapping
 
     # network_mode: "service:gluetun"
     environment:
@@ -73,7 +74,7 @@ services:
       - ${SERVICE_DIR}/data:/data
 
     healthcheck:
-      test: ['CMD', 'curl', '--fail', 'http://127.0.0.1:8989/sonarr/ping']
+      test: ["CMD", "curl", "--fail", "http://127.0.0.1:8989/sonarr/ping"]
       interval: 30s
       retries: 10
 
@@ -83,7 +84,7 @@ services:
     restart: unless-stopped
 
     ports:
-      - '7878:7878' # port mapping
+      - "7878:7878" # port mapping
 
     environment:
       - PUID=${USER_ID}
@@ -95,7 +96,7 @@ services:
       - ${SERVICE_DIR}/data:/data
 
     healthcheck:
-      test: ['CMD', 'curl', '--fail', 'http://127.0.0.1:7878/radarr/ping']
+      test: ["CMD", "curl", "--fail", "http://127.0.0.1:7878/radarr/ping"]
       interval: 30s
       retries: 10
 
@@ -107,7 +108,7 @@ services:
     # depends_on:
     #   - gluetun
     ports:
-      - '8085:8085' # port mapping
+      - "8085:8085" # port mapping
 
     environment:
       - PUID=${USER_ID}
@@ -122,6 +123,7 @@ services:
     healthcheck:
       # Container may fail if the PIA's token expired, so mark as unhealthy when there is no internet connection
       # see: https://github.com/qdm12/gluetun/issues/641#issuecomment-933856220
-      test: ['CMD', 'curl', '--fail', 'http://127.0.0.1:8080', 'https://google.com']
+      test:
+        ["CMD", "curl", "--fail", "http://127.0.0.1:8080", "https://google.com"]
       interval: 30s
       retries: 10

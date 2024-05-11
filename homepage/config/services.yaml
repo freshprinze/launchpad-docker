@@ -180,7 +180,7 @@
         description: 4G Router
 
     - Fibre Router:
-        icon: /icons/slt-mobitel.png    
+        icon: /icons/slt-mobitel.png
         href: "{{HOMEPAGE_VAR_ROUTER_2_URL}}"
         description: Fibre Router
 
@@ -336,6 +336,11 @@
         icon: /icons/cyberpower.svg
         href: "{{HOMEPAGE_VAR_PDU_1_URL}}"
         description: CyberPower PDU
+
+    - Growatt Server:
+        icon: /icons/growatt.svg
+        href: "{{HOMEPAGE_VAR_GROWATT_SERVER_URL}}"
+        description: Growatt Server
 
 ## ----------------------------------------------------------------------- row 7
 - Other:
