@@ -1,0 +1,29 @@
+---
+networks:
+  media-net:
+    external: true
+    
+services:
+  prowlarr:
+    image: lscr.io/linuxserver/prowlarr:latest
+    container_name: prowlarr
+    restart: unless-stopped
+
+    networks:
+      - media-net
+
+    ports:
+      - "9696:9696"
+
+    environment:
+      - PUID=${USER_ID}
+      - PGID=${GROUP_ID}
+      - TZ=${TIMEZONE}
+
+    volumes:
+      - ${SERVICE_DIR}/data:/config
+
+    healthcheck:
+      test: ["CMD", "curl", "--fail", "http://127.0.0.1:9696/prowlarr/ping"]
+      interval: 30s
+      retries: 10

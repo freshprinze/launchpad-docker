@@ -1,0 +1,17 @@
+---
+services:
+  overseerr:
+    image: sctx/overseerr:latest
+    container_name: overseerr
+    restart: unless-stopped
+
+    environment:
+      - LOG_LEVEL=debug
+      - TZ=Asia/Tokyo
+      - PORT=5055 #optional
+    
+    ports:
+      - 5055:5055
+    
+    volumes:
+      - ${SERVICE_DIR}/config:/app/config

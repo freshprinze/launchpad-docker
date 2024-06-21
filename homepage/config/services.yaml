@@ -300,30 +300,43 @@
 
     - Jellyfin:
         icon: jellyfin.svg
+        href: "{{HOMEPAGE_VAR_JELLYFIN_URL}}"
 
     - Lidarr:
         icon: lidarr.svg
+        href: "{{HOMEPAGE_VAR_LIDARR_URL}}"
 
     - Prowlarr:
         icon: prowlarr.svg
+        href: "{{HOMEPAGE_VAR_PROWLARR_URL}}"
 
     - Radarr:
         icon: radarr.svg
+        href: "{{HOMEPAGE_VAR_RADARR_URL}}"
 
     - Sonarr:
         icon: sonarr.svg
+        href: "{{HOMEPAGE_VAR_SONARR_URL}}"
 
     - Bazarr:
         icon: bazarr.svg
+        href: "{{HOMEPAGE_VAR_BAZARR_URL}}"
 
-    - OVerseerr:
+    - Overseerr:
         icon: overseerr.svg
+        href: "{{HOMEPAGE_VAR_OVERSEERR_URL}}"
+
+    - Deluge:
+        icon: deluge.svg
+        href: "{{HOMEPAGE_VAR_DELUGE_URL}}"
 
     - qBitTorrent:
         icon: qbittorrent.svg
+        href: "{{HOMEPAGE_VAR_QBITTORRENT_URL}}"
 
     - Tdarr:
         icon: tdarr.png
+        href: "{{HOMEPAGE_VAR_TDARR_URL}}"
 
 ## ----------------------------------------------------------------------- row 6
 - Power:

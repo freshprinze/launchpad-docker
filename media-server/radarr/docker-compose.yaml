@@ -1,0 +1,30 @@
+---
+networks:
+  media-net:
+    external: true
+    
+services:
+  radarr:
+    image: lscr.io/linuxserver/radarr
+    container_name: radarr
+    restart: unless-stopped
+
+    networks:
+      - media-net
+      
+    ports:
+      - "7878:7878" # port mapping
+
+    environment:
+      - PUID=${USER_ID}
+      - PGID=${GROUP_ID}
+      - TZ=${TIMEZONE}
+
+    volumes:
+      - ${SERVICE_DIR}:/config
+      - ${REMOTE_DATA_DIR}/data:/data
+
+    healthcheck:
+      test: ["CMD", "curl", "--fail", "http://127.0.0.1:7878/radarr/ping"]
+      interval: 30s
+      retries: 10

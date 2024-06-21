@@ -1,0 +1,26 @@
+---
+networks:
+  media-net:
+    external: true
+
+services:
+  deluge:
+    image: lscr.io/linuxserver/deluge:latest
+    container_name: deluge
+    restart: unless-stopped
+
+    ports:
+      - 8112:8112
+      - 6881:6881
+      - 6881:6881/udp
+      - 58846:58846 #optional
+
+    environment:
+      - PUID=${USER_ID}
+      - PGID=${GROUP_ID}
+      - TZ=${TIMEZONE}
+      - DELUGE_LOGLEVEL=error #optional
+    
+    volumes:
+      - ${SERVICE_DIR}:/config
+      - ${REMOTE_DATA_DIR}/data/torrents:/data/torrents
