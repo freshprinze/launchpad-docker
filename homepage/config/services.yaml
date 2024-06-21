@@ -4,360 +4,360 @@
 
 ## --------------------------------------------------------------------- row 1
 - DNS:
-    - Pi-Hole1:
-        icon: pi-hole.svg
-        href: "{{HOMEPAGE_VAR_PIHOLE_URL_1}}"
-        description: pathos
-        widget:
-          type: pihole
-          url: "{{HOMEPAGE_VAR_PIHOLE_API_URL_1}}"
-          key: "{{HOMEPAGE_VAR_PIHOLE_API_KEY_1}}"
+      - Pi-Hole1:
+            icon: pi-hole.svg
+            href: "{{HOMEPAGE_VAR_PIHOLE_URL_1}}"
+            description: pathos
+            widget:
+                type: pihole
+                url: "{{HOMEPAGE_VAR_PIHOLE_API_URL_1}}"
+                key: "{{HOMEPAGE_VAR_PIHOLE_API_KEY_1}}"
 
-    - Pi-Hole2:
-        icon: pi-hole.svg
-        href: "{{HOMEPAGE_VAR_PIHOLE_URL_2}}"
-        description: logos
-        widget:
-          type: pihole
-          url: "{{HOMEPAGE_VAR_PIHOLE_API_URL_2}}"
-          key: "{{HOMEPAGE_VAR_PIHOLE_API_KEY_2}}"
+      - Pi-Hole2:
+            icon: pi-hole.svg
+            href: "{{HOMEPAGE_VAR_PIHOLE_URL_2}}"
+            description: logos
+            widget:
+                type: pihole
+                url: "{{HOMEPAGE_VAR_PIHOLE_API_URL_2}}"
+                key: "{{HOMEPAGE_VAR_PIHOLE_API_KEY_2}}"
 
-    - Traefik:
-        icon: traefik.svg
-        href: "{{HOMEPAGE_VAR_TRAEFIK_URL}}"
-        description: traefik
-        widget:
-          type: traefik
-          url: "{{HOMEPAGE_VAR_TRAEFIK_URL}}"
-          username: "{{HOMEPAGE_VAR_TRAEFIK_USER}}"
-          password: "{{HOMEPAGE_VAR_TRAEFIK_PASSWORD}}"
+      - Traefik:
+            icon: traefik.svg
+            href: "{{HOMEPAGE_VAR_TRAEFIK_URL}}"
+            description: traefik
+            widget:
+                type: traefik
+                url: "{{HOMEPAGE_VAR_TRAEFIK_URL}}"
+                username: "{{HOMEPAGE_VAR_TRAEFIK_USER}}"
+                password: "{{HOMEPAGE_VAR_TRAEFIK_PASSWORD}}"
 
 - Remote Access:
-    - PiKVM:
-        icon: https://avatars.githubusercontent.com/u/41749659?s=200&v=4
-        href: "{{HOMEPAGE_VAR_PIKVM_URL}}"
-        description: remote kvm
+      - PiKVM:
+            icon: https://avatars.githubusercontent.com/u/41749659?s=200&v=4
+            href: "{{HOMEPAGE_VAR_PIKVM_URL}}"
+            description: remote kvm
 
-    - IPMI:
-        icon: https://upload.wikimedia.org/wikipedia/commons/1/1d/Super_Micro_Computer_Logo.svg
-        href: "{{HOMEPAGE_VAR_IPMI_1_URL}}"
-        description: Atlas (Main Proxmox Server)
+      - IPMI:
+            icon: https://upload.wikimedia.org/wikipedia/commons/1/1d/Super_Micro_Computer_Logo.svg
+            href: "{{HOMEPAGE_VAR_IPMI_1_URL}}"
+            description: Atlas (Main Proxmox Server)
 
-    - KVM:
-        icon: hdmi.svg
-        href: "{{HOMEPAGE_VAR_KVM_URL}}"
-        description: TESmart Remote KVM
+      - KVM:
+            icon: hdmi.svg
+            href: "{{HOMEPAGE_VAR_KVM_URL}}"
+            description: TESmart Remote KVM
 
 - Home Automation:
-    - Home Assistant:
-        icon: home-assistant.svg
-        href: "{{HOMEPAGE_VAR_HOME_ASSISTANT_URL}}"
-        description: home
-        widget:
-          type: homeassistant
-          url: "{{HOMEPAGE_VAR_HOME_ASSISTANT_URL}}"
-          key: "{{HOMEPAGE_VAR_HOME_ASSISTANT_API_KEY}}"
+      - Home Assistant:
+            icon: home-assistant.svg
+            href: "{{HOMEPAGE_VAR_HOME_ASSISTANT_URL}}"
+            description: home
+            widget:
+                type: homeassistant
+                url: "{{HOMEPAGE_VAR_HOME_ASSISTANT_URL}}"
+                key: "{{HOMEPAGE_VAR_HOME_ASSISTANT_API_KEY}}"
 
-    - Scryped:
-        icon: https://www.scrypted.app/images/web_hi_res_512.png
-        href: "{{HOMEPAGE_VAR_SCRYPTED_URL}}"
-        description: Mgmt Console
+      - Scryped:
+            icon: https://www.scrypted.app/images/web_hi_res_512.png
+            href: "{{HOMEPAGE_VAR_SCRYPTED_URL}}"
+            description: Mgmt Console
 
 - Security & Identity:
-    - Authelia:
-        icon: authelia.svg
-        href:
-        description: Authelia
+      - Authelia:
+            icon: authelia.svg
+            href:
+            description: Authelia
 
 - Monitoring:
-    - Uptime Kuma:
-        icon: uptime-kuma.svg
-        href: "{{HOMEPAGE_VAR_UPTIME_KUMA_URL}}"
-        description: Internal
+      - Uptime Kuma:
+            icon: uptime-kuma.svg
+            href: "{{HOMEPAGE_VAR_UPTIME_KUMA_URL}}"
+            description: Internal
 
-    - Uptime Robot:
-        icon: https://play-lh.googleusercontent.com/cUrv0t00FYQ1GKLuOTvv8qjo1lSDjqZC16IOp3Fb6ijew6Br5m4o16HhDp0GBu_Bw8Y=w240-h480-rw
-        href: https://uptimerobot.com/dashboard
-        description: External
-        widget:
-          type: uptimerobot
-          fields: ["sitesUp", "sitesDown"]
-          url: https://api.uptimerobot.com
-          key: "{{HOMEPAGE_VAR_UPTIME_ROBOT_API_KEY}}"
+      - Uptime Robot:
+            icon: https://play-lh.googleusercontent.com/cUrv0t00FYQ1GKLuOTvv8qjo1lSDjqZC16IOp3Fb6ijew6Br5m4o16HhDp0GBu_Bw8Y=w240-h480-rw
+            href: https://uptimerobot.com/dashboard
+            description: External
+            widget:
+                type: uptimerobot
+                fields: ["sitesUp", "sitesDown"]
+                url: https://api.uptimerobot.com
+                key: "{{HOMEPAGE_VAR_UPTIME_ROBOT_API_KEY}}"
 
-    - PiAlert:
-        icon: pi-alert.png
-        href: "{{HOMEPAGE_VAR_PIALERT_URL}}"
+      - PiAlert:
+            icon: pi-alert.png
+            href: "{{HOMEPAGE_VAR_PIALERT_URL}}"
 
-    - Grafana:
-        icon: grafana.svg
+      - Grafana:
+            icon: grafana.svg
 
-    - Prometheus:
-        icon: prometheus.svg
+      - Prometheus:
+            icon: prometheus.svg
 
 ## ----------------------------------------------------------------------- row 2
 - Management:
-    - Netbox:
-        icon: netbox.svg
-        href: "{{HOMEPAGE_VAR_NETBOX_URL}}"
-        description: IP and Access Management
+      - Netbox:
+            icon: netbox.svg
+            href: "{{HOMEPAGE_VAR_NETBOX_URL}}"
+            description: IP and Access Management
 
-    - Netdata:
-        icon: netdata.svg
-        href: "{{HOMEPAGE_VAR_NETDATA_URL}}"
-        description: Network Management
+      - Netdata:
+            icon: netdata.svg
+            href: "{{HOMEPAGE_VAR_NETDATA_URL}}"
+            description: Network Management
 
-    - WOL:
-        icon: upsnap.svg
-        href: "{{HOMEPAGE_VAR_WOL_URL}}"
-        description: Wake on LAN
+      - WOL:
+            icon: upsnap.svg
+            href: "{{HOMEPAGE_VAR_WOL_URL}}"
+            description: Wake on LAN
 
-    - Netboot:
-        icon: https://netboot.xyz/img/nbxyz-laptop.gif
-        href: "{{HOMEPAGE_VAR_NETBOOT_URL}}"
-        description: Network Boot Utility
+      - Netboot:
+            icon: https://netboot.xyz/img/nbxyz-laptop.gif
+            href: "{{HOMEPAGE_VAR_NETBOOT_URL}}"
+            description: Network Boot Utility
 
-    - Nut:
-        icon: nut.svg
-        href: "{{HOMEPAGE_VAR_NUT_URL}}"
-        descriptio: Network UPS Monitor
+      - Nut:
+            icon: nut.svg
+            href: "{{HOMEPAGE_VAR_NUT_URL}}"
+            descriptio: Network UPS Monitor
 
-    - Semaphore:
-        icon: semaphore.svg
-        href: "{{HOMEPAGE_VAR_SEMAPHORE_URL}}"
-        descriptio: Ansible Semaphore
+      - Semaphore:
+            icon: semaphore.svg
+            href: "{{HOMEPAGE_VAR_SEMAPHORE_URL}}"
+            descriptio: Ansible Semaphore
 
 ## ----------------------------------------------------------------------- row 3
 - Network:
-    - pfSense:
-        icon: pfsense.svg
-        href: "{{HOMEPAGE_VAR_SWITCH_1_URL}}"
-        description: Main Firewall
+      - pfSense:
+            icon: pfsense.svg
+            href: "{{HOMEPAGE_VAR_SWITCH_1_URL}}"
+            description: Main Firewall
 
-    - Mikrotik:
-        icon: mikrotik.svg
-        href: "{{HOMEPAGE_VAR_SWITCH_2_URL}}"
-        description: Main Switch (Mahasen)
+      - Mikrotik:
+            icon: mikrotik.svg
+            href: "{{HOMEPAGE_VAR_SWITCH_2_URL}}"
+            description: Main Switch (Mahasen)
 
-    - PoE Switch:
-        icon: tp-link.png
-        href: "{{HOMEPAGE_VAR_SWITCH_3_URL}}"
-        description: PoE 28-Port Switch (Gajaba)
+      - PoE Switch:
+            icon: tp-link.png
+            href: "{{HOMEPAGE_VAR_SWITCH_3_URL}}"
+            description: PoE 28-Port Switch (Gajaba)
 
-    - 16-Port Switch:
-        icon: tp-link.png
-        href: "{{HOMEPAGE_VAR_SWITHC_4_URL}}"
-        description: 16-Port Switch (Ravana)
+      - 16-Port Switch:
+            icon: tp-link.png
+            href: "{{HOMEPAGE_VAR_SWITHC_4_URL}}"
+            description: 16-Port Switch (Ravana)
 
-    - 8-Port Switch:
-        icon: tp-link.png
-        href: "{{HOMEPAGE_VAR_SWITCH_5_URL}}"
-        description: 8-Port Switch
+      - 8-Port Switch:
+            icon: tp-link.png
+            href: "{{HOMEPAGE_VAR_SWITCH_5_URL}}"
+            description: 8-Port Switch
 
-    - 8-Port Desk Switch:
-        icon: /icons/mokerlink.png
-        href: "{{HOMEPAGE_VAR_SWITCH_6_URL}}"
-        description: Desktop Switch (Gamunu)
+      - 8-Port Desk Switch:
+            icon: /icons/mokerlink.png
+            href: "{{HOMEPAGE_VAR_SWITCH_6_URL}}"
+            description: Desktop Switch (Gamunu)
 
-    - Groud Floor PoE Switch:
-        icon: /icons/mokerlink.png
-        href: "{{HOMEPAGE_VAR_SWITCH_7_URL}}"
-        description: Groud Floor PoE Switch
+      - Groud Floor PoE Switch:
+            icon: /icons/mokerlink.png
+            href: "{{HOMEPAGE_VAR_SWITCH_7_URL}}"
+            description: Groud Floor PoE Switch
 
-    - Roof Terrace Switch:
-        icon: netgear.svg
-        href: "{{HOMEPAGE_VAR_SWITCH_8_URL}}"
-        description: Roof Terrace Switch
+      - Roof Terrace Switch:
+            icon: netgear.svg
+            href: "{{HOMEPAGE_VAR_SWITCH_8_URL}}"
+            description: Roof Terrace Switch
 
-    - Omada:
-        icon: omada.svg
-        href: "{{HOMEPAGE_VAR_OMADA_URL}}"
-        description: Omada Management Controller
+      - Omada:
+            icon: omada.svg
+            href: "{{HOMEPAGE_VAR_OMADA_URL}}"
+            description: Omada Management Controller
 
-    - 4G Router:
-        icon: /icons/slt-mobitel.png
-        href: "{{HOMEPAGE_VAR_ROUTER_1_URL}}"
-        description: 4G Router
+      - 4G Router:
+            icon: /icons/slt-mobitel.png
+            href: "{{HOMEPAGE_VAR_ROUTER_1_URL}}"
+            description: 4G Router
 
-    - Fibre Router:
-        icon: /icons/slt-mobitel.png
-        href: "{{HOMEPAGE_VAR_ROUTER_2_URL}}"
-        description: Fibre Router
+      - Fibre Router:
+            icon: /icons/slt-mobitel.png
+            href: "{{HOMEPAGE_VAR_ROUTER_2_URL}}"
+            description: Fibre Router
 
 ## ----------------------------------------------------------------------- row 4
 
 - Hypervisor:
-    - Proxmox:
-        icon: proxmox.svg
-        href: "{{HOMEPAGE_VAR_PROXMOX_URL_1}}"
-        description: atlas
-        widget:
-          type: proxmox
-          url: "{{HOMEPAGE_VAR_PROXMOX_URL_IP_1}}"
-          username: "{{HOMEPAGE_VAR_PROXMOX_USER}}"
-          password: "{{HOMEPAGE_VAR_PROXMOX_API_KEY}}"
-          node: atlas
+      - Proxmox:
+            icon: proxmox.svg
+            href: "{{HOMEPAGE_VAR_PROXMOX_URL_1}}"
+            description: atlas
+            widget:
+                type: proxmox
+                url: "{{HOMEPAGE_VAR_PROXMOX_URL_IP_1}}"
+                username: "{{HOMEPAGE_VAR_PROXMOX_USER}}"
+                password: "{{HOMEPAGE_VAR_PROXMOX_API_KEY}}"
+                node: atlas
 
-    - Proxmox:
-        icon: proxmox.svg
-        href: "{{HOMEPAGE_VAR_PROXMOX_URL_2}}"
-        description: capella
-        widget:
-          type: proxmox
-          url: "{{HOMEPAGE_VAR_PROXMOX_URL_IP_2}}"
-          username: "{{HOMEPAGE_VAR_PROXMOX_USER}}"
-          password: "{{HOMEPAGE_VAR_PROXMOX_API_KEY}}"
-          node: capella
+      - Proxmox:
+            icon: proxmox.svg
+            href: "{{HOMEPAGE_VAR_PROXMOX_URL_2}}"
+            description: capella
+            widget:
+                type: proxmox
+                url: "{{HOMEPAGE_VAR_PROXMOX_URL_IP_2}}"
+                username: "{{HOMEPAGE_VAR_PROXMOX_USER}}"
+                password: "{{HOMEPAGE_VAR_PROXMOX_API_KEY}}"
+                node: capella
 
-    - Proxmox:
-        icon: proxmox.svg
-        href: "{{HOMEPAGE_VAR_PROXMOX_URL_3}}"
-        description: auriga
-        widget:
-          type: proxmox
-          url: "{{HOMEPAGE_VAR_PROXMOX_URL_IP_3}}"
-          username: "{{HOMEPAGE_VAR_PROXMOX_USER}}"
-          password: "{{HOMEPAGE_VAR_PROXMOX_API_KEY}}"
-          node: auriga
+      - Proxmox:
+            icon: proxmox.svg
+            href: "{{HOMEPAGE_VAR_PROXMOX_URL_3}}"
+            description: auriga
+            widget:
+                type: proxmox
+                url: "{{HOMEPAGE_VAR_PROXMOX_URL_IP_3}}"
+                username: "{{HOMEPAGE_VAR_PROXMOX_USER}}"
+                password: "{{HOMEPAGE_VAR_PROXMOX_API_KEY}}"
+                node: auriga
 
 - Containers:
-    - Rancher:
-        icon: rancher.svg
-        href: "{{HOMEPAGE_VAR_RACNHER_URL}}"
-        description: k8s
+      - Rancher:
+            icon: rancher.svg
+            href: "{{HOMEPAGE_VAR_RACNHER_URL}}"
+            description: k8s
 
-    - Portainer:
-        icon: portainer.svg
-        href: "{{HOMEPAGE_VAR_PORTAINER_URL}}"
-        description: Docker Cluster
+      - Portainer:
+            icon: portainer.svg
+            href: "{{HOMEPAGE_VAR_PORTAINER_URL}}"
+            description: Docker Cluster
 
 - Storage:
-    - Synology:
-        icon: synology.svg
-        href: "{{HOMEPAGE_VAR_SYNOLOGY_RACK_URL}}"
-        description: Synology Rack NAS
+      - Synology:
+            icon: synology.svg
+            href: "{{HOMEPAGE_VAR_SYNOLOGY_RACK_URL}}"
+            description: Synology Rack NAS
 
-    - TrueNAS:
-        icon: truenas.svg
-        href: "{{HOMEPAGE_VAR_TRUENAS_URL}}"
-        description: scale
-        widget:
-          type: truenas
-          url: "{{HOMEPAGE_VAR_TRUENAS_URL}}"
-          key: "{{HOMEPAGE_VAR_TRUENAS_API_KEY}}"
+      - TrueNAS:
+            icon: truenas.svg
+            href: "{{HOMEPAGE_VAR_TRUENAS_URL}}"
+            description: scale
+            widget:
+                type: truenas
+                url: "{{HOMEPAGE_VAR_TRUENAS_URL}}"
+                key: "{{HOMEPAGE_VAR_TRUENAS_API_KEY}}"
 
-    - MinIO:
-        icon: minio.svg
-        href: "{{HOMEPAGE_VAR_MINIO_URL}}"
-        description: object storage
+      - MinIO:
+            icon: minio.svg
+            href: "{{HOMEPAGE_VAR_MINIO_URL}}"
+            description: object storage
 
-    - Longhorn:
-        icon: longhorn.svg
-        href: "{{HOMEPAGE_VAR_LONGHORN_URL}}"
-        description: k8s storage
+      - Longhorn:
+            icon: longhorn.svg
+            href: "{{HOMEPAGE_VAR_LONGHORN_URL}}"
+            description: k8s storage
 
 ## ----------------------------------------------------------------------- row 4
 - Productivity:
-    - Paperless:
-        icon: paperless.svg
-        href: "{{HOMEPAGE_VAR_PAPERLESS_URL}}"
-        description: Document Management
+      - Paperless:
+            icon: paperless.svg
+            href: "{{HOMEPAGE_VAR_PAPERLESS_URL}}"
+            description: Document Management
 
-    - Syncthing:
-        icon: syncthing.svg
-        href: "{{HOMEPAGE_VAR_SYNCTHING_URL}}"
-        description: Syncthing
+      - Syncthing:
+            icon: syncthing.svg
+            href: "{{HOMEPAGE_VAR_SYNCTHING_URL}}"
+            description: Syncthing
 
-    - NextCloud:
-        icon: nextcloud.svg
-        href: "{{HOMEPAGE_VAR_NEXTCLOUD_URL}}"
-        description: NextCloud
+      - NextCloud:
+            icon: nextcloud.svg
+            href: "{{HOMEPAGE_VAR_NEXTCLOUD_URL}}"
+            description: NextCloud
 
-    - Snipe-IT:
-        icon: snipe-it.png
-        href: "{{HOMEPAGE_VAR_SNIPEIT_URL}}"
-        description: Home Inventory Management
+      - Snipe-IT:
+            icon: snipe-it.png
+            href: "{{HOMEPAGE_VAR_SNIPEIT_URL}}"
+            description: Home Inventory Management
 
 ## ----------------------------------------------------------------------- row 5
 - Media:
-    - Plex:
-        icon: plex.svg
-        href: "{{HOMEPAGE_VAR_PLEX_URL}}"
-        description: media server
-        widget:
-          type: plex
-          url: "{{HOMEPAGE_VAR_PLEX_URL}}"
-          key: "{{HOMEPAGE_VAR_PLEX_API_TOKEN}}"
+      - PlexNas:
+            icon: plex.svg
+            href: "{{HOMEPAGE_VAR_PLEX_NAS_URL}}"
+            description: Plex in NAS
+            widget:
+                type: plex
+                url: "{{HOMEPAGE_VAR_PLEX_NAS_URL}}"
+                key: "{{HOMEPAGE_VAR_PLEX_NAS_API_TOKEN}}"
 
-    - Tautulli:
-        icon: tautulli.svg
-        href: "{{HOMEPAGE_VAR_TAUTULLI_URL}}"
-        description: plex stats
-        widget:
-          type: tautulli
-          url: "{{HOMEPAGE_VAR_TAUTULLI_URL}}"
-          key: "{{HOMEPAGE_VAR_TAUTULLI_API_KEY}}"
+      - Tautulli:
+            icon: tautulli.svg
+            href: "{{HOMEPAGE_VAR_TAUTULLI_URL}}"
+            description: plex stats
+            widget:
+                type: tautulli
+                url: "{{HOMEPAGE_VAR_TAUTULLI_URL}}"
+                key: "{{HOMEPAGE_VAR_TAUTULLI_API_KEY}}"
 
-    - Jellyfin:
-        icon: jellyfin.svg
-        href: "{{HOMEPAGE_VAR_JELLYFIN_URL}}"
+      - Jellyfin:
+            icon: jellyfin.svg
+            href: "{{HOMEPAGE_VAR_JELLYFIN_URL}}"
 
-    - Lidarr:
-        icon: lidarr.svg
-        href: "{{HOMEPAGE_VAR_LIDARR_URL}}"
+      - Lidarr:
+            icon: lidarr.svg
+            href: "{{HOMEPAGE_VAR_LIDARR_URL}}"
 
-    - Prowlarr:
-        icon: prowlarr.svg
-        href: "{{HOMEPAGE_VAR_PROWLARR_URL}}"
+      - Prowlarr:
+            icon: prowlarr.svg
+            href: "{{HOMEPAGE_VAR_PROWLARR_URL}}"
 
-    - Radarr:
-        icon: radarr.svg
-        href: "{{HOMEPAGE_VAR_RADARR_URL}}"
+      - Radarr:
+            icon: radarr.svg
+            href: "{{HOMEPAGE_VAR_RADARR_URL}}"
 
-    - Sonarr:
-        icon: sonarr.svg
-        href: "{{HOMEPAGE_VAR_SONARR_URL}}"
+      - Sonarr:
+            icon: sonarr.svg
+            href: "{{HOMEPAGE_VAR_SONARR_URL}}"
 
-    - Bazarr:
-        icon: bazarr.svg
-        href: "{{HOMEPAGE_VAR_BAZARR_URL}}"
+      - Bazarr:
+            icon: bazarr.svg
+            href: "{{HOMEPAGE_VAR_BAZARR_URL}}"
 
-    - Overseerr:
-        icon: overseerr.svg
-        href: "{{HOMEPAGE_VAR_OVERSEERR_URL}}"
+      - Overseerr:
+            icon: overseerr.svg
+            href: "{{HOMEPAGE_VAR_OVERSEERR_URL}}"
 
-    - Deluge:
-        icon: deluge.svg
-        href: "{{HOMEPAGE_VAR_DELUGE_URL}}"
+      - Deluge:
+            icon: deluge.svg
+            href: "{{HOMEPAGE_VAR_DELUGE_URL}}"
 
-    - qBitTorrent:
-        icon: qbittorrent.svg
-        href: "{{HOMEPAGE_VAR_QBITTORRENT_URL}}"
+      - qBitTorrent:
+            icon: qbittorrent.svg
+            href: "{{HOMEPAGE_VAR_QBITTORRENT_URL}}"
 
-    - Tdarr:
-        icon: tdarr.png
-        href: "{{HOMEPAGE_VAR_TDARR_URL}}"
+      - Tdarr:
+            icon: tdarr.png
+            href: "{{HOMEPAGE_VAR_TDARR_URL}}"
 
 ## ----------------------------------------------------------------------- row 6
 - Power:
-    - UPS-01:
-        icon: /icons/cyberpower.svg
-        href: "{{HOMEPAGE_VAR_UPS_1_URL}}"
-        description: CyberPower UPS
+      - UPS-01:
+            icon: /icons/cyberpower.svg
+            href: "{{HOMEPAGE_VAR_UPS_1_URL}}"
+            description: CyberPower UPS
 
-    - PDU-01:
-        icon: /icons/cyberpower.svg
-        href: "{{HOMEPAGE_VAR_PDU_1_URL}}"
-        description: CyberPower PDU
+      - PDU-01:
+            icon: /icons/cyberpower.svg
+            href: "{{HOMEPAGE_VAR_PDU_1_URL}}"
+            description: CyberPower PDU
 
-    - Growatt Server:
-        icon: /icons/growatt.svg
-        href: "{{HOMEPAGE_VAR_GROWATT_SERVER_URL}}"
-        description: Growatt Server
+      - Growatt Server:
+            icon: /icons/growatt.svg
+            href: "{{HOMEPAGE_VAR_GROWATT_SERVER_URL}}"
+            description: Growatt Server
 
 ## ----------------------------------------------------------------------- row 7
 - Other:
-    - Shlink:
-        icon: https://shlink.io/images/shlink-logo-blue.svg
-        href: "{{HOMEPAGE_VAR_SHLINK_URL}}"
-        description: dashboard
+      - Shlink:
+            icon: https://shlink.io/images/shlink-logo-blue.svg
+            href: "{{HOMEPAGE_VAR_SHLINK_URL}}"
+            description: dashboard
