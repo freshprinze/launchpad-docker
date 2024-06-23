@@ -192,33 +192,33 @@
             href: "{{HOMEPAGE_VAR_PROXMOX_URL_1}}"
             description: atlas
             widget:
-                type: proxmox
-                url: "{{HOMEPAGE_VAR_PROXMOX_URL_IP_1}}"
-                username: "{{HOMEPAGE_VAR_PROXMOX_USER}}"
-                password: "{{HOMEPAGE_VAR_PROXMOX_API_KEY}}"
-                node: atlas
+                  type: proxmox
+                  url: "{{HOMEPAGE_VAR_PROXMOX_URL_IP_1}}"
+                  username: "{{HOMEPAGE_VAR_PROXMOX_USER}}"
+                  password: "{{HOMEPAGE_VAR_PROXMOX_API_KEY}}"
+                  node: atlas
 
       - Proxmox:
             icon: proxmox.svg
             href: "{{HOMEPAGE_VAR_PROXMOX_URL_2}}"
             description: capella
             widget:
-                type: proxmox
-                url: "{{HOMEPAGE_VAR_PROXMOX_URL_IP_2}}"
-                username: "{{HOMEPAGE_VAR_PROXMOX_USER}}"
-                password: "{{HOMEPAGE_VAR_PROXMOX_API_KEY}}"
-                node: capella
+                  type: proxmox
+                  url: "{{HOMEPAGE_VAR_PROXMOX_URL_IP_2}}"
+                  username: "{{HOMEPAGE_VAR_PROXMOX_USER}}"
+                  password: "{{HOMEPAGE_VAR_PROXMOX_API_KEY}}"
+                  node: capella
 
       - Proxmox:
             icon: proxmox.svg
             href: "{{HOMEPAGE_VAR_PROXMOX_URL_3}}"
             description: auriga
             widget:
-                type: proxmox
-                url: "{{HOMEPAGE_VAR_PROXMOX_URL_IP_3}}"
-                username: "{{HOMEPAGE_VAR_PROXMOX_USER}}"
-                password: "{{HOMEPAGE_VAR_PROXMOX_API_KEY}}"
-                node: auriga
+                  type: proxmox
+                  url: "{{HOMEPAGE_VAR_PROXMOX_URL_IP_3}}"
+                  username: "{{HOMEPAGE_VAR_PROXMOX_USER}}"
+                  password: "{{HOMEPAGE_VAR_PROXMOX_API_KEY}}"
+                  node: auriga
 
 - Containers:
       - Rancher:
@@ -242,9 +242,9 @@
             href: "{{HOMEPAGE_VAR_TRUENAS_URL}}"
             description: scale
             widget:
-                type: truenas
-                url: "{{HOMEPAGE_VAR_TRUENAS_URL}}"
-                key: "{{HOMEPAGE_VAR_TRUENAS_API_KEY}}"
+                  type: truenas
+                  url: "{{HOMEPAGE_VAR_TRUENAS_URL}}"
+                  key: "{{HOMEPAGE_VAR_TRUENAS_API_KEY}}"
 
       - MinIO:
             icon: minio.svg
@@ -285,18 +285,18 @@
             href: "{{HOMEPAGE_VAR_PLEX_NAS_URL}}"
             description: Plex in NAS
             widget:
-                type: plex
-                url: "{{HOMEPAGE_VAR_PLEX_NAS_URL}}"
-                key: "{{HOMEPAGE_VAR_PLEX_NAS_API_TOKEN}}"
+                  type: plex
+                  url: "{{HOMEPAGE_VAR_PLEX_NAS_URL}}"
+                  key: "{{HOMEPAGE_VAR_PLEX_NAS_API_TOKEN}}"
 
       - Tautulli:
             icon: tautulli.svg
             href: "{{HOMEPAGE_VAR_TAUTULLI_URL}}"
             description: plex stats
             widget:
-                type: tautulli
-                url: "{{HOMEPAGE_VAR_TAUTULLI_URL}}"
-                key: "{{HOMEPAGE_VAR_TAUTULLI_API_KEY}}"
+                  type: tautulli
+                  url: "{{HOMEPAGE_VAR_TAUTULLI_URL}}"
+                  key: "{{HOMEPAGE_VAR_TAUTULLI_API_KEY}}"
 
       - Jellyfin:
             icon: jellyfin.svg
@@ -354,6 +354,11 @@
             icon: /icons/growatt.svg
             href: "{{HOMEPAGE_VAR_GROWATT_SERVER_URL}}"
             description: Growatt Server
+
+      - Solar Assistant:
+            icon: /icons/solar-assistant.svg
+            href: "{{HOMEPAGE_VAR_SOLAR_ASSISTANT_URL}}"
+            description: Solar Assistant
 
 ## ----------------------------------------------------------------------- row 7
 - Other:
