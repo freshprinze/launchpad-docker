@@ -262,6 +262,10 @@
             icon: paperless.svg
             href: "{{HOMEPAGE_VAR_PAPERLESS_URL}}"
             description: Document Management
+            widget:
+                  type: paperlessngx
+                  url: "{{HOMEPAGE_VAR_PAPERLESS_URL}}"
+                  key: "{{HOMEPAGE_VAR_PAPERLESS_TOKEN}}"
 
       - Syncthing:
             icon: syncthing.svg
@@ -301,6 +305,15 @@
       - Jellyfin:
             icon: jellyfin.svg
             href: "{{HOMEPAGE_VAR_JELLYFIN_URL}}"
+            widget:
+                  type: jellyfin
+                  url: "{{HOMEPAGE_VAR_JELLYFIN_URL}}"
+                  key: "{{HOMEPAGE_VAR_JELLYFIN_API_KEY}}"
+                  enableBlocks: true # optional, defaults to false
+                  enableNowPlaying: true # optional, defaults to true
+                  enableUser: false # optional, defaults to false
+                  showEpisodeNumber: true # optional, defaults to false
+                  expandOneStreamToTwoRows: false # optional, defaults to true
 
       - Lidarr:
             icon: lidarr.svg
@@ -309,30 +322,61 @@
       - Prowlarr:
             icon: prowlarr.svg
             href: "{{HOMEPAGE_VAR_PROWLARR_URL}}"
+            widget:
+                  type: prowlarr
+                  url: "{{HOMEPAGE_VAR_PROWLARR_URL}}"
+                  key: "{{HOMEPAGE_VAR_PROWLARR_API_KEY}}"
 
       - Radarr:
             icon: radarr.svg
             href: "{{HOMEPAGE_VAR_RADARR_URL}}"
+            widget:
+                  type: radarr
+                  url: "{{HOMEPAGE_VAR_RADARR_URL}}"
+                  key: "{{HOMEPAGE_VAR_RADARR_API_KEY}}"
+                  enableQueue: false # optional, defaults to false
 
       - Sonarr:
             icon: sonarr.svg
             href: "{{HOMEPAGE_VAR_SONARR_URL}}"
+            widget:
+                  type: sonarr
+                  url: "{{HOMEPAGE_VAR_SONARR_URL}}"
+                  key: "{{HOMEPAGE_VAR_SONARR_API_KEY}}"
+                  enableQueue: false # optional, defaults to false
 
       - Bazarr:
             icon: bazarr.svg
             href: "{{HOMEPAGE_VAR_BAZARR_URL}}"
+            widget:
+                  type: bazarr
+                  url: "{{HOMEPAGE_VAR_BAZARR_URL}}"
+                  key: "{{HOMEPAGE_VAR_BAZARR_API_KEY}}"
 
       - Overseerr:
             icon: overseerr.svg
             href: "{{HOMEPAGE_VAR_OVERSEERR_URL}}"
+            widget:
+                  type: overseerr
+                  url: "{{HOMEPAGE_VAR_OVERSEERR_URL}}"
+                  key: "{{HOMEPAGE_VAR_OVERSEERR_API_KEY}}"
 
       - Deluge:
             icon: deluge.svg
             href: "{{HOMEPAGE_VAR_DELUGE_URL}}"
+            widget:
+                  type: deluge
+                  url: "{{HOMEPAGE_VAR_DELUGE_URL}}"
+                  password: "{{HOMEPAGE_VAR_DELUGE_WEBUI_PWD}}"
 
       - qBitTorrent:
             icon: qbittorrent.svg
             href: "{{HOMEPAGE_VAR_QBITTORRENT_URL}}"
+            widget:
+                  type: qbittorrent
+                  url: "{{HOMEPAGE_VAR_QBITTORRENT_URL}}"
+                  username: "{{HOMEPAGE_VAR_QBITTORRENT_USER}}"
+                  password: "{{HOMEPAGE_VAR_QBITTORRENT_PWD}}"
 
       - Tdarr:
             icon: tdarr.png

@@ -1,0 +1,51 @@
+---
+networks:
+  discovery:
+    external: true
+
+services:
+  traefik:
+    image: traefik:v3.0
+    container_name: traefik
+    restart: unless-stopped
+
+    security_opt:
+      - no-new-privileges:true
+
+    networks:
+      - discovery
+
+    ports:
+      - 80:80
+      - 443:443
+
+    environment:
+      - CLOUDFLARE_EMAIL=${CLOUDFLARE_EMAIL}
+      - CLOUDFLARE_API_KEY=${CLOUDFLARE_API_KEY}
+
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - /var/run/docker.sock:/var/run/docker.sock:ro 
+      - ${SERVICE_DIR}/data/traefik.yaml:/traefik.yaml:ro
+      - ${SERVICE_DIR}/data/config.yaml:/config.yaml:ro
+      - ${SERVICE_DIR}/data/acme.json:/acme.json      
+      - ${SERVICE_DIR}/logs/:/logs/
+
+    labels:
+      - traefik.enable=true
+      - traefik.http.middlewares.sslheader.headers.customrequestheaders.X-Forwarded-Proto=https
+      - traefik.http.middlewares.traefik-auth.basicauth.users=${HTTP_BASIC_USER}:${HTTP_BASIC_PWD}      
+      
+      - traefik.http.routers.traefik-http.entrypoints=web
+      - traefik.http.routers.traefik-http.rule=Host(`${SERVICE_URL}`)
+      - traefik.http.routers.traefik.middlewares=traefik-https-redirect
+      - traefik.http.middlewares.traefik-https-redirect.redirectscheme.scheme=https
+
+      - traefik.http.routers.traefik-https.entrypoints=websecure
+      - traefik.http.routers.traefik-https.service=api@internal
+      - traefik.http.routers.traefik-https.rule=Host(`${SERVICE_URL}`)
+      - traefik.http.routers.traefik-https.middlewares=traefik-auth     
+      - traefik.http.routers.traefik-https.tls=true
+      - traefik.http.routers.traefik-https.tls.certresolver=letsencrypt
+      - traefik.http.routers.traefik-https.tls.domains[0].main=${DOMAIN_NAME}
+      - traefik.http.routers.traefik-https.tls.domains[0].sans=*.${DOMAIN_NAME}
