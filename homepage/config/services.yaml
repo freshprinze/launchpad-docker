@@ -43,11 +43,6 @@
             href: "{{HOMEPAGE_VAR_IPMI_1_URL}}"
             description: Atlas (Main Proxmox Server)
 
-      - KVM:
-            icon: hdmi.svg
-            href: "{{HOMEPAGE_VAR_KVM_URL}}"
-            description: TESmart Remote KVM
-
 - Home Automation:
       - Home Assistant:
             icon: home-assistant.svg
