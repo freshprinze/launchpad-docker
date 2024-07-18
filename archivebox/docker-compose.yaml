@@ -1,0 +1,65 @@
+---
+services:
+  archivebox:
+    image: archivebox/archivebox:latest
+    container_name: archivebox
+    restart: unless-stopped
+
+    ports:
+      - 8000:8000
+
+    environment:
+      - ADMIN_USERNAME=${ADMIN_USERNAME} # create an admin user on first run with the given user/pass combo
+      - ADMIN_PASSWORD=${ADMIN_PASSWORD}
+      - ALLOWED_HOSTS=* # restrict this to only accept incoming traffic via specific domain name
+      - PUBLIC_INDEX=False # set to False to prevent anonymous users from viewing snapshot list
+      - PUBLIC_SNAPSHOTS=False # set to False to prevent anonymous users from viewing snapshot content
+      - PUBLIC_ADD_VIEW=False # set to True to allow anonymous users to submit new URLs to archive
+      - SEARCH_BACKEND_ENGINE=sonic # tells ArchiveBox to use sonic container below for fast full-text search
+      - SEARCH_BACKEND_HOST_NAME=sonic
+      - SEARCH_BACKEND_PASSWORD=${SEARCH_BACKEND_PASSWORD}
+      - PUID=${USER_ID}
+      - PGID=${GROUP_ID}
+      # - MEDIA_MAX_SIZE=750m             # increase this filesize limit to allow archiving larger audio/video files
+      # - TIMEOUT=60                      # increase this number to 120+ seconds if you see many slow downloads timing out
+      # - CHECK_SSL_VALIDITY=True         # set to False to disable strict SSL checking (allows saving URLs w/ broken certs)
+
+    volumes:
+      - ${REMOTE_DATA_DIR}/data:/data
+
+  archivebox_scheduler:
+    image: archivebox/archivebox:latest
+    command: schedule --foreground --update --every=day
+    container_name: archivebox_scheduler
+    environment:
+      - TIMEOUT=120 # use a higher timeout than the main container to give slow tasks more time when retrying
+      - PUID=${USER_ID}
+      - PGID=${GROUP_ID}
+    volumes:
+      - ${REMOTE_DATA_DIR}/data:/data
+    # cpus: 2                               # uncomment / edit these values to limit scheduler container resource consumption
+    # mem_limit: 2048m
+    # restart: always
+
+  sonic:
+    image: valeriansaliou/sonic:latest
+    container_name: sonic
+
+    build:
+      # custom build just auto-downloads archivebox's default sonic.cfg as a convenience
+      # not needed after first run / if you have already have ./etc/sonic.cfg present
+      dockerfile_inline: |
+        FROM quay.io/curl/curl:latest AS config_downloader
+        RUN curl -fsSL 'https://raw.githubusercontent.com/ArchiveBox/ArchiveBox/stable/etc/sonic.cfg' > /tmp/sonic.cfg
+        FROM valeriansaliou/sonic:latest
+        COPY --from=config_downloader /tmp/sonic.cfg /etc/sonic.cfg
+
+    expose:
+      - 1491
+
+    environment:
+      - SEARCH_BACKEND_PASSWORD=${SEARCH_BACKEND_PASSWORD}
+
+    volumes:
+      - ./sonic.cfg:/etc/sonic.cfg
+      - ${REMOTE_DATA_DIR}/data/sonic:/var/lib/sonic/store
