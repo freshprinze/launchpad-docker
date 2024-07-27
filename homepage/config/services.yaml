@@ -75,10 +75,10 @@
             href: https://uptimerobot.com/dashboard
             description: External
             widget:
-                type: uptimerobot
-                fields: ["sitesUp", "sitesDown"]
-                url: https://api.uptimerobot.com
-                key: "{{HOMEPAGE_VAR_UPTIME_ROBOT_API_KEY}}"
+                  type: uptimerobot
+                  fields: ["sitesUp", "sitesDown"]
+                  url: https://api.uptimerobot.com
+                  key: "{{HOMEPAGE_VAR_UPTIME_ROBOT_API_KEY}}"
 
       - PiAlert:
             icon: pi-alert.png
@@ -276,6 +276,16 @@
             icon: snipe-it.png
             href: "{{HOMEPAGE_VAR_SNIPEIT_URL}}"
             description: Home Inventory Management
+
+      - ArchiveBox:
+            icon: archivebox.svg
+            href: "{{HOMEPAGE_VAR_ARCHIVE_BOX_URL}}"
+            description: Website Archiving
+
+      - Ulanzi:
+            icon: ulanzi.svg
+            href: "{{HOMEPAGE_VAR_AWTRIX_URL}}"
+            description: Desktop Clock
 
 ## ----------------------------------------------------------------------- row 5
 - Media:
