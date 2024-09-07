@@ -1,0 +1,17 @@
+---
+services:
+  freshrss:
+    image: freshrss/freshrss:edge
+    container_name: freshrss
+    restart: unless-stopped
+
+    ports:
+      - 80:80
+
+    environment:
+      - PUID=${USER_ID}
+      - PGID=${GROUP_ID}
+      - TZ=Asia/Colombo
+
+    volumes:
+      - ${SERVICE_DIR}/config:/config
