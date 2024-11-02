@@ -217,7 +217,7 @@
 
       - Proxmox:
             icon: proxmox.svg
-            href: "{{HOMEPAGE_VAR_PROXMOX_URL_3}}"
+            href: "{{HOMEPAGE_VAR_PROXMOX_BACKUP_SERVER_URL}}"
             description: pbs
             widget:
                   type: proxmoxbackupserver
