@@ -25,7 +25,7 @@ services:
       # - CHECK_SSL_VALIDITY=True         # set to False to disable strict SSL checking (allows saving URLs w/ broken certs)
 
     volumes:
-      - ${REMOTE_DATA_DIR}/data:/data
+      - ${SERVICE_DIR}/data:/data
 
   archivebox_scheduler:
     image: archivebox/archivebox:latest
@@ -36,7 +36,7 @@ services:
       - PUID=${USER_ID}
       - PGID=${GROUP_ID}
     volumes:
-      - ${REMOTE_DATA_DIR}/data:/data
+      - ${SERVICE_DIR}/data:/data
     # cpus: 2                               # uncomment / edit these values to limit scheduler container resource consumption
     # mem_limit: 2048m
     # restart: always
@@ -62,4 +62,4 @@ services:
 
     volumes:
       - ./sonic.cfg:/etc/sonic.cfg
-      - ${REMOTE_DATA_DIR}/data/sonic:/var/lib/sonic/store
+      - ${SERVICE_DIR}/data/sonic:/var/lib/sonic/store

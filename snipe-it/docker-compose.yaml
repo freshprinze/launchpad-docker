@@ -1,48 +1,52 @@
 ---
 services:
   db:
-    image: mariadb:11.3-jammy
-    container_name: SNIPE-IT-DB
-    restart: on-failure:5
-    security_opt:
-      - no-new-privileges:true
-    hostname: db
-    environment:
-      - MYSQL_ROOT_PASSWORD=snipe
-      - MYSQL_USER=snipe
-      - MYSQL_PASSWORD=snipe
-      - MYSQL_DATABASE=snipe
-      - TZ=${TIMEZONE}
+    image: mariadb:11.5.2
+    restart: unless-stopped
     volumes:
-      - /volume1/docker/snipeit/db:/var/lib/mysql:rw
-
-  snipeit:
-    image: lscr.io/linuxserver/snipe-it:latest
-    container_name: SNIPE-IT
-    restart: on-failure:5
-    healthcheck:
-      test: curl -f http://localhost:80/ || exit 1
-    depends_on:
-      - db
-    volumes:
-      - /volume1/docker/snipeit/config:/config:rw
+      - ${SERVICE_DIR}/db_data:/var/lib/mysql
     environment:
-      - TZ=${TIMEZONE}
-      - APP_URL=https://snipeit.yourname.synology.me
-      # - NGINX_APP_URL=https://snipeit.yourname.synology.me
-      - MYSQL_PORT_3306_TCP_ADDR=db
-      - MYSQL_PORT_3306_TCP_PORT=3306
-      - MYSQL_DATABASE=snipe
-      - MYSQL_USER=snipe
-      - MYSQL_PASSWORD=snipe
       - PUID=${PUID}
       - PGID=${PGID}
-      - MAIL_PORT_587_TCP_ADDR=smtp.gmail.com
+      - TZ=${TIMEZONE}
+      - TIMEZONE=${TIMEZONE}
+      - MYSQL_DATABASE=${MYSQL_DATABASE}
+      - MYSQL_USER=${MYSQL_USERNAME}
+      - MYSQL_PASSWORD=${MYSQL_PASSWORD}
+      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
+    healthcheck:
+      test: ["CMD", "healthcheck.sh", "--connect", "--innodb_initialized"]
+      interval: 5s
+      timeout: 1s
+      retries: 5
+
+  snipe-it:
+    image: lscr.io/linuxserver/snipe-it:latest
+    container_name: snipe-it
+    environment:
+      - PUID=${PUID}
+      - PGID=${PGID}
+      - TZ=${TIMEZONE}
+      - APP_KEY=${APP_KEY}
+      - APP_URL=https://snipeit.local.theinquisitive.me
+      - MYSQL_PORT_3306_TCP_ADDR=db
+      - MYSQL_PORT_3306_TCP_PORT=3306
+      - MYSQL_DATABASE=${MYSQL_DATABASE}
+      - MYSQL_USER=${MYSQL_USERNAME}
+      - MYSQL_PASSWORD=${MYSQL_PASSWORD}
+      - APP_DEBUG=false #optional
+      - APP_ENV=production #optional
+      - APP_FORCE_TLS=false #optional
+      - APP_LOCALE= #optional
+      - MAIL_PORT_587_TCP_ADDR=${MAIL_PORT_587_TCP_ADDR}
       - MAIL_PORT_587_TCP_PORT=587
-      - MAIL_ENV_FROM_ADDR=${MAIL_ENV_FROM_ADDR}
-      - MAIL_ENV_FROM_NAME=${MAIL_ENV_FROM_NAME}
-      - MAIL_ENV_ENCRYPTION=TLS
-      - MAIL_ENV_USERNAME=${MAIL_ENV_USERNAME}
-      - MAIL_ENV_PASSWORD=${MAIL_ENV_PASSWORD}
+      # - MAIL_ENV_FROM_ADDR= #optional
+      # - MAIL_ENV_FROM_NAME= #optional
+      # - MAIL_ENV_ENCRYPTION= #optional
+      # - MAIL_ENV_USERNAME= #optional
+      # - MAIL_ENV_PASSWORD= #optional
+    volumes:
+      - ${SERVICE_DIR}/config:/config
     ports:
-      - 1339:80
+      - 8080:80
+    restart: unless-stopped

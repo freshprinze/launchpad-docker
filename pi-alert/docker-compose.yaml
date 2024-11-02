@@ -1,19 +1,14 @@
 ---
-networks:
-  discovery:
-    external: true
-
 services:
   pi.alert:
     container_name: Pi.Alert
     mem_limit: 2g
     cpu_shares: 768
 
+    network_mode: host
+    
     image: jokobsk/pi.alert:latest
     restart: on-failure:5
-
-    # networks:
-    #   - discovery
 
     ports:
       - '20211:20211'
@@ -34,11 +29,3 @@ services:
 
     healthcheck:
       test: curl -f http://localhost:20211/ || exit 1
-
-    labels:
-      - 'traefik.enable=true'
-      - 'traefik.http.routers.pi-alert.rule=Host(`${SERVICE_URL}`)'
-      - 'traefik.http.routers.pi-alert.entrypoints=websecure'
-      - 'traefik.http.routers.pi-alert.tls=true'
-      - 'traefik.http.services.pi-alert.loadBalancer.server.port=20211'
-      - 'traefik.docker.network=discovery'

@@ -1,18 +1,11 @@
 ---
-networks:
-  discovery:
-    external: true
-
 services:
   upsnap:
     container_name: upsnap
     image: ghcr.io/seriousm4x/upsnap:4
     restart: unless-stopped
 
-    networks:
-      - discovery
-
-    user: 1000:1000
+    network_mode: host
 
     ports:
       - 8090:8090
@@ -20,7 +13,7 @@ services:
     environment:
       - TZ=Asia/Colombo # Set container timezone for cron schedules
       #   - UPSNAP_INTERVAL=@every 10s # Sets the interval in which the devices are pinged
-      #   - UPSNAP_SCAN_RANGE=192.168.1.0/24 # Scan range is used for device discovery on local network
+      - UPSNAP_SCAN_RANGE=172.16.20.0/24 # Scan range is used for device discovery on local network
       #   - UPSNAP_SCAN_TIMEOUT=500ms # Scan timeout is nmap's --host-timeout value to wait for devices (https://nmap.org/book/man-performance.html)
       - UPSNAP_PING_PRIVILEGED=true # Set to false if you don't have root user permissions
       - UPSNAP_WEBSITE_TITLE=TheInquisitive WOL
@@ -39,11 +32,3 @@ services:
 
     volumes:
       - ${SERVICE_DIR}/data:/app/pb_data
-
-    labels:
-      - 'traefik.enable=true'
-      - 'traefik.http.routers.upsnap.rule=Host(`${SERVICE_URL}`)'
-      - 'traefik.http.routers.upsnap.entrypoints=websecure'
-      - 'traefik.http.routers.upsnap.tls=true'
-      - 'traefik.http.services.upsnap.loadBalancer.server.port=8090'
-      - 'traefik.docker.network=discovery'

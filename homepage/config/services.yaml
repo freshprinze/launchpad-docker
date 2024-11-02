@@ -415,3 +415,8 @@
             icon: https://shlink.io/images/shlink-logo-blue.svg
             href: "{{HOMEPAGE_VAR_SHLINK_URL}}"
             description: dashboard
+
+      - SnipeIT:
+            icon: snipe-it.png
+            href: "{{HOMEPAGE_VAR_SNIPEIT_URL}}"
+            description: Inventory Management
