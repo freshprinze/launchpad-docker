@@ -215,6 +215,16 @@
                   password: "{{HOMEPAGE_VAR_PROXMOX_API_KEY}}"
                   node: auriga
 
+      - Proxmox:
+            icon: proxmox.svg
+            href: "{{HOMEPAGE_VAR_PROXMOX_URL_3}}"
+            description: pbs
+            widget:
+                  type: proxmoxbackupserver
+                  url: "{{HOMEPAGE_VAR_PROXMOX_BACKUP_SERVER_IP}}"
+                  username: "{{HOMEPAGE_VAR_PROXMOX_BACKUP_SERVER_USER}}"
+                  password: "{{HOMEPAGE_VAR_PROXMOX_BACKUP_SERVER_SECRET}}"
+
 - Containers:
       - Rancher:
             icon: rancher.svg
