@@ -14,19 +14,19 @@ services:
 
     environment:
       TZ: 'Asia/Colombo'
-      WEBPASSWORD: ${PIHOLE_WEBPASSWORD}
-      WEBTHEME: 'default-dark'
-      VIRTUAL_HOST: 'pihole1.local.theinquisitive.me'
+      FTLCONF_dns_listeningMode: 'all'
+      FTLCONF_dns_upstreams: ${PIHOLE_DNS_UPSTREAMS}
+      FTLCONF_dns_revServers: ${PIHOLE_DNS_REVERSE_SERVERS}
+      FTLCONF_webserver_api_password: ${PIHOLE_WEBPASSWORD}
+      FTLCONF_webserver_domain: ${PIHOLE_WEBSERVER_DOMAIN}
+      PIHOLE_UID: ${USER_ID}
+      PIHOLE_GID: ${GROUP_ID}
 
-    # Volumes store your data between container upgrades
     volumes:
       - '${SERVICE_DIR}/etc-pihole/:/etc/pihole/'
       - '${SERVICE_DIR}/etc-dnsmasq.d/:/etc/dnsmasq.d/'
 
-    # Recommended but not required (DHCP needs NET_ADMIN)
-    #   https://github.com/pi-hole/docker-pi-hole#note-on-capabilities
     cap_add:
-      - NET_ADMIN
-
-    labels:
-      - 'traefik.enable=true'
+      - CAP_SYS_TIME
+      - CAP_SYS_NICE
+    #   - NET_ADMIN
