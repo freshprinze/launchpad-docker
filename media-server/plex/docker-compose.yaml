@@ -21,10 +21,9 @@ services:
       - PGID=${PGID}
       - TZ=Asia/Colombo
       - VERSION=docker
-      - PLEX_CLAIM=claim-1QR_UyNCtbx9hT7n51YA
+      - PLEX_CLAIM=claim-Miy9k57fhVE91jS2xjEg
       
     volumes:
       - /etc/localtime:/etc/localtime:ro
       - ${SERVICE_DIR}/config:/config
-      - ${REMOTE_DATA_DIR}/data/media:/data/media:ro
-      - ${REMOTE_DATA_DIR}/video:/data/mediaold:ro
+      - ${REMOTE_DATA_DIR}/media:/data/media:ro

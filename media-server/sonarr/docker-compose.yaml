@@ -13,7 +13,7 @@ services:
       - media-net
 
     ports:
-      - "8989:8989" # port mapping
+      - '8989:8989' # port mapping
 
     # network_mode: "service:gluetun"
     environment:
@@ -27,6 +27,6 @@ services:
       - ${REMOTE_DATA_DIR}/data:/data
 
     healthcheck:
-      test: ["CMD", "curl", "--fail", "http://127.0.0.1:8989/sonarr/ping"]
+      test: ['CMD', 'curl', '--fail', 'http://127.0.0.1:8989/sonarr/ping']
       interval: 30s
       retries: 10

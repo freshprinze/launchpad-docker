@@ -21,7 +21,7 @@ services:
       - TZ=${TIMEZONE}
 
     volumes:
-      - ${SERVICE_DIR}/data:/config
+      - ${SERVICE_DIR}/config:/config
 
     healthcheck:
       test: ["CMD", "curl", "--fail", "http://127.0.0.1:9696/prowlarr/ping"]

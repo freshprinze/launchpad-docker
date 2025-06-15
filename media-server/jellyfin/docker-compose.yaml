@@ -3,7 +3,7 @@ services:
   jellyfin:
     container_name: jellyfin
     image: jellyfin/jellyfin
-    network_mode: "host"
+    network_mode: 'host'
     restart: unless-stopped
 
     environment:
@@ -17,11 +17,8 @@ services:
     volumes:
       - ${SERVICE_DIR}/config:/config
       - ${SERVICE_DIR}/cache:/cache
-      - type: bind
-        source: ${REMOTE_DATA_DIR}
-        target: /data/media
-        read_only: true
+      - ${REMOTE_DATA_DIR}/data:/data/media:ro
 
     # Optional - may be necessary for docker healthcheck to pass if running in host network mode
     extra_hosts:
-      - "host.docker.internal:host-gateway"
+      - 'host.docker.internal:host-gateway'

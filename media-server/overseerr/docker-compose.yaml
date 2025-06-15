@@ -7,7 +7,7 @@ services:
 
     environment:
       - LOG_LEVEL=debug
-      - TZ=Asia/Tokyo
+      - TZ=Asia/Colombo
       - PORT=5055 #optional
     
     ports:

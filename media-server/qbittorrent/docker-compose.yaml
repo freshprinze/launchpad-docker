@@ -23,7 +23,7 @@ services:
 
     volumes:
       - ${SERVICE_DIR}:/config
-      - ${REMOTE_DATA_DIR}/data/torrents:/data/torrents
+      - ${REMOTE_DATA_DIR}/torrents:/data/torrents
 
     healthcheck:
       # Container may fail if the PIA's token expired, so mark as unhealthy when there is no internet connection
