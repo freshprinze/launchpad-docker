@@ -26,4 +26,4 @@ services:
     volumes:
       - /etc/localtime:/etc/localtime:ro
       - ${SERVICE_DIR}/config:/config
-      - ${REMOTE_DATA_DIR}/media:/data/media:ro
+      - ${REMOTE_DATA_DIR}/data/media:/data/media:ro
