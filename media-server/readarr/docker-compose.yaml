@@ -1,0 +1,22 @@
+---
+networks:
+  media-net:
+    external: true
+
+services:
+  readarr:
+    image: lscr.io/linuxserver/readarr:develop
+    container_name: readarr
+    restart: unless-stopped
+
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Asia/Colombo
+
+    ports:
+      - 8787:8787
+
+    volumes:
+      - ${SERVICE_DIR}/config:/config
+      - ${REMOTE_DATA_DIR}/data:/data

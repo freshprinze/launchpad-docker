@@ -1,0 +1,23 @@
+---
+networks:
+  media-net:
+    external: true
+
+services:
+  sabnzbd:
+    image: lscr.io/linuxserver/sabnzbd:latest
+    container_name: sabnzbd
+    restart: unless-stopped
+
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Etc/UTC
+
+    ports:
+      - 8080:8080
+
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - ${SERVICE_DIR}/config:/config
+      - ${REMOTE_DATA_DIR}/data/usenet:/data/usenet:rw

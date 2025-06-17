@@ -251,18 +251,17 @@
         href: "{{HOMEPAGE_VAR_PLEX_URL}}"
         description: Plex
 
-    - Tautulli:
-        icon: tautulli.svg
-        href: "{{HOMEPAGE_VAR_TAUTULLI_URL}}"
-        description: plex stats
-
     - Jellyfin:
         icon: jellyfin.svg
         href: "{{HOMEPAGE_VAR_JELLYFIN_URL}}"
 
-    - Lidarr:
-        icon: lidarr.svg
-        href: "{{HOMEPAGE_VAR_LIDARR_URL}}"
+    - Overseerr:
+        icon: overseerr.svg
+        href: "{{HOMEPAGE_VAR_OVERSEERR_URL}}"
+
+    - Jellyseerr:
+        icon: jellyseerr.svg
+        href: "{{HOMEPAGE_VAR_JELLYSEERR_URL}}"
 
     - Prowlarr:
         icon: prowlarr.svg
@@ -276,21 +275,34 @@
         icon: sonarr.svg
         href: "{{HOMEPAGE_VAR_SONARR_URL}}"
 
+    - Readarr:
+        icon: readarr.svg
+        href: "{{HOMEPAGE_VAR_READARR_URL}}"
+
+    - Lidarr:
+        icon: lidarr.svg
+        href: "{{HOMEPAGE_VAR_LIDARR_URL}}"
+
     - Bazarr:
         icon: bazarr.svg
         href: "{{HOMEPAGE_VAR_BAZARR_URL}}"
-
-    - Overseerr:
-        icon: overseerr.svg
-        href: "{{HOMEPAGE_VAR_OVERSEERR_URL}}"
 
     - Deluge:
         icon: deluge.svg
         href: "{{HOMEPAGE_VAR_DELUGE_URL}}"
 
+    - Sabnzbd:
+        icon: sabnzbd.svg
+        href: "{{HOMEPAGE_VAR_SABNZBD_URL}}"
+
     - qBitTorrent:
         icon: qbittorrent.svg
         href: "{{HOMEPAGE_VAR_QBITTORRENT_URL}}"
+
+    - Tautulli:
+        icon: tautulli.svg
+        href: "{{HOMEPAGE_VAR_TAUTULLI_URL}}"
+        description: plex stats
 
     - Tdarr:
         icon: tdarr.png
