@@ -1,14 +1,14 @@
 ---
 services:
   broker:
-    image: docker.io/library/redis:7
+    image: docker.io/library/redis:8
     restart: unless-stopped
 
     volumes:
       - redisdata:/data
 
   db:
-    image: docker.io/library/postgres:15
+    image: docker.io/library/postgres:17
     restart: unless-stopped
 
     environment:
@@ -17,7 +17,7 @@ services:
       POSTGRES_PASSWORD: paperless
 
     volumes:
-      - ${REMOTE_MOUNT_DIR}/pgdata:/var/lib/postgresql/data
+      - ${SERVICE_DIR}/pgdata:/var/lib/postgresql/data
 
   webserver:
     image: ghcr.io/paperless-ngx/paperless-ngx:latest
@@ -47,9 +47,11 @@ services:
       # PAPERLESS_CSRF_TRUSTED_ORIGINS: 'https://*.local.theinquisitive.me'
       # PAPERLESS_CORS_ALLOWED_HOSTS: ${SERVICE_URL}
       # PAPERLESS_ALLOWED_HOSTS: ${SERVICE_URL}
+      USERMAP_UID: 3004
+      USERMAP_GID: 3004
 
   gotenberg:
-    image: docker.io/gotenberg/gotenberg:7.10
+    image: docker.io/gotenberg/gotenberg:8.20
     restart: unless-stopped
 
     # The gotenberg chromium route is used to convert .eml files. We do not
