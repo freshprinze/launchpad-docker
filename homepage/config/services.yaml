@@ -219,6 +219,21 @@
         href: "{{HOMEPAGE_VAR_PAPERLESS_URL}}"
         description: Document Management
 
+    - ArchiveBox:
+        icon: archivebox.svg
+        href: "{{HOMEPAGE_VAR_ARCHIVE_BOX_URL}}"
+        description: Website Archiving
+
+    - Wallos:
+        icon: wallos.svg
+        href: "{{HOMEPAGE_VAR_WALLOS_URL}}"
+        description: Subscription Management
+
+    - Firefly III:
+        icon: firefly.svg
+        href: "{{HOMEPAGE_VAR_FIREFLY_URL}}"
+        description: Personal Finance
+
     - Syncthing:
         icon: syncthing.svg
         href: "{{HOMEPAGE_VAR_SYNCTHING_URL}}"
@@ -233,11 +248,6 @@
         icon: snipe-it.png
         href: "{{HOMEPAGE_VAR_SNIPEIT_URL}}"
         description: Home Inventory Management
-
-    - ArchiveBox:
-        icon: archivebox.svg
-        href: "{{HOMEPAGE_VAR_ARCHIVE_BOX_URL}}"
-        description: Website Archiving
 
     - Ulanzi:
         icon: ulanzi.svg
@@ -287,6 +297,10 @@
         icon: bazarr.svg
         href: "{{HOMEPAGE_VAR_BAZARR_URL}}"
 
+    - Huntarr:
+        icon: huntarr.svg
+        href: "{{HOMEPAGE_VAR_HUNTARR_URL}}"
+
     - Deluge:
         icon: deluge.svg
         href: "{{HOMEPAGE_VAR_DELUGE_URL}}"
@@ -298,15 +312,6 @@
     - qBitTorrent:
         icon: qbittorrent.svg
         href: "{{HOMEPAGE_VAR_QBITTORRENT_URL}}"
-
-    - Tautulli:
-        icon: tautulli.svg
-        href: "{{HOMEPAGE_VAR_TAUTULLI_URL}}"
-        description: plex stats
-
-    - Tdarr:
-        icon: tdarr.png
-        href: "{{HOMEPAGE_VAR_TDARR_URL}}"
 
 ## ----------------------------------------------------------------------- row 6
 - Power:

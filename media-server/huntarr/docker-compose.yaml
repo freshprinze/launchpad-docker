@@ -1,0 +1,26 @@
+services:
+  huntarr:
+    image: huntarr/huntarr:latest
+    container_name: huntarr
+    restart: unless-stopped
+
+    ports:
+      - '9705:9705'
+
+    environment:
+      - TZ=${TIMEZONE:-UTC}
+
+    # Graceful shutdown configuration
+    stop_signal: SIGTERM
+    stop_grace_period: 30s
+
+    # Health check configuration
+    healthcheck:
+      test: ['CMD', 'curl', '-f', 'http://localhost:9705/health']
+      interval: 30s
+      timeout: 10s
+      start_period: 40s
+      retries: 3
+
+    volumes:
+      - ${SERVICE_DIR}/config:/config
