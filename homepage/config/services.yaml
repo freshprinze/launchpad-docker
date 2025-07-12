@@ -162,18 +162,18 @@
 - Hypervisor:
     - Proxmox:
         icon: proxmox.svg
-        href: "{{HOMEPAGE_VAR_PROXMOX_URL_1}}"
+        href: "{{HOMEPAGE_VAR_ATLAS_URL}}"
         description: atlas
 
     - Proxmox:
         icon: proxmox.svg
-        href: "{{HOMEPAGE_VAR_PROXMOX_URL_2}}"
-        description: capella
+        href: "{{HOMEPAGE_VAR_PAVO_URL}}"
+        description: pavo
 
     - Proxmox:
         icon: proxmox.svg
-        href: "{{HOMEPAGE_VAR_PROXMOX_URL_3}}"
-        description: auriga
+        href: "{{HOMEPAGE_VAR_OCTANS_URL}}"
+        description: octans
 
     - Proxmox:
         icon: proxmox.svg
@@ -220,12 +220,12 @@
         description: Document Management
 
     - ArchiveBox:
-        icon: archivebox.svg
+        icon: /icons/archivebox.png
         href: "{{HOMEPAGE_VAR_ARCHIVE_BOX_URL}}"
         description: Website Archiving
 
     - Wallos:
-        icon: wallos.svg
+        icon: /icons/wallos.png
         href: "{{HOMEPAGE_VAR_WALLOS_URL}}"
         description: Subscription Management
 
@@ -243,6 +243,11 @@
         icon: nextcloud.svg
         href: "{{HOMEPAGE_VAR_NEXTCLOUD_URL}}"
         description: NextCloud
+
+    - Immich:
+        icon: immich.svg
+        href: "{{HOMEPAGE_VAR_IMMICH_URL}}"
+        description: Immich
 
     - Snipe-IT:
         icon: snipe-it.png
@@ -331,7 +336,7 @@
         description: Growatt Server
 
     - Solar Assistant:
-        icon: /icons/solar-assistant.svg
+        icon: /icons/solar-assistant.png
         href: "{{HOMEPAGE_VAR_SOLAR_ASSISTANT_URL}}"
         description: Solar Assistant
 
@@ -341,8 +346,3 @@
         icon: https://shlink.io/images/shlink-logo-blue.svg
         href: "{{HOMEPAGE_VAR_SHLINK_URL}}"
         description: dashboard
-
-    - SnipeIT:
-        icon: snipe-it.png
-        href: "{{HOMEPAGE_VAR_SNIPEIT_URL}}"
-        description: Inventory Management
