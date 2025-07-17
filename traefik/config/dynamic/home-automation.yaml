@@ -1,0 +1,15 @@
+http:
+  routers:
+    ha:
+      entryPoints:
+        - websecure
+      rule: Host(`ha.local.theinquisitive.me`)
+      tls: {}
+      service: ha
+
+  services:
+    ha:
+      loadBalancer:
+        servers:
+          - url: http://172.16.30.7:8123
+        passHostHeader: true

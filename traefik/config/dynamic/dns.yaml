@@ -1,0 +1,34 @@
+http:
+  routers:
+    pathos:
+      entryPoints:
+        - websecure
+      rule: Host(`pathos.local.theinquisitive.me`)
+      # middlewares:
+      # - default-headers
+      # - pihole-redirectregex
+      # - pihole-addprefix
+      tls: {}
+      service: pathos
+    logos:
+      entryPoints:
+        - websecure
+      rule: Host(`logos.local.theinquisitive.me`)
+      # middlewares:
+      # - default-headers
+      # - pihole-redirectregex
+      # - pihole-addprefix
+      tls: {}
+      service: logos
+
+  services:
+    pathos:
+      loadBalancer:
+        servers:
+          - url: http://172.16.20.6
+        passHostHeader: true
+    logos:
+      loadBalancer:
+        servers:
+          - url: http://172.16.20.11
+        passHostHeader: true

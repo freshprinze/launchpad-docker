@@ -1,0 +1,37 @@
+http:
+  routers:
+    cyberpower-ups:
+      entryPoints:
+        - websecure
+      rule: Host(`ups-01.local.theinquisitive.me`)
+      tls: {}
+      service: cyberpower-ups
+    cyberpower-pdu:
+      entryPoints:
+        - websecure
+      rule: Host(`pdu-01.local.theinquisitive.me`)
+      tls: {}
+      service: cyberpower-pdu
+    solar-assistant:
+      entryPoints:
+        - websecure
+      rule: Host(`solar.local.theinquisitive.me`)
+      tls: {}
+      service: solar-assistant
+
+  services:
+    cyberpower-ups:
+      loadBalancer:
+        servers:
+          - url: http://10.99.99.12
+        passHostHeader: true
+    cyberpower-pdu:
+      loadBalancer:
+        servers:
+          - url: http://10.99.99.13
+        passHostHeader: true
+    solar-assistant:
+      loadBalancer:
+        servers:
+          - url: http://172.16.30.14
+        passHostHeader: true

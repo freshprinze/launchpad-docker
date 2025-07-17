@@ -1,0 +1,26 @@
+http:
+  routers:
+    netbox:
+      entryPoints:
+        - websecure
+      rule: Host(`netbox.local.theinquisitive.me`)
+      tls: {}
+      service: netbox
+    upsnap:
+      entryPoints:
+        - websecure
+      rule: Host(`wol.local.theinquisitive.me`)
+      tls: {}
+      service: upsnap
+
+  services:
+    netbox:
+      loadBalancer:
+        servers:
+          - url: https://172.16.20.53
+        passHostHeader: true
+    upsnap:
+      loadBalancer:
+        servers:
+          - url: http://172.16.20.8:8090
+        passHostHeader: true

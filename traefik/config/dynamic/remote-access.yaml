@@ -1,0 +1,28 @@
+http:
+  routers:
+    pikvm:
+      entryPoints:
+        - websecure
+      rule: Host(`pikvm.local.theinquisitive.me`)
+      tls: {}
+      service: pikvm
+    atlas_ipmi:
+      entryPoints:
+        - websecure
+      rule: Host(`ipmi-atlas.local.theinquisitive.me`)
+      middlewares:
+        - default-headers
+      tls: {}
+      service: atlas_ipmi
+
+  services:
+    pikvm:
+      loadBalancer:
+        servers:
+          - url: https://10.99.99.7
+        passHostHeader: true
+    atlas_ipmi:
+      loadBalancer:
+        servers:
+          - url: https://10.99.99.9
+        passHostHeader: true

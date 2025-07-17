@@ -1,0 +1,85 @@
+http:
+  routers:
+    paperless:
+      entryPoints:
+        - websecure
+      rule: Host(`paperless.local.theinquisitive.me`)
+      tls: {}
+      service: paperless
+    archivebox:
+      entryPoints:
+        - websecure
+      rule: Host(`archivebox.local.theinquisitive.me`)
+      tls: {}
+      service: archivebox
+    wallos:
+      entryPoints:
+        - websecure
+      rule: Host(`wallos.local.theinquisitive.me`)
+      tls: {}
+      service: wallos
+    firefly:
+      entryPoints:
+        - websecure
+      rule: Host(`firefly.local.theinquisitive.me`)
+      tls: {}
+      service: firefly
+      middlewares:
+        - default-headers
+    immich:
+      entryPoints:
+        - websecure
+      rule: Host(`immich.local.theinquisitive.me`)
+      tls: {}
+      service: immich
+      middlewares:
+        - default-headers
+    snipeit:
+      entryPoints:
+        - websecure
+      rule: Host(`snipeit.local.theinquisitive.me`)
+      tls: {}
+      service: snipeit
+    ulanzi:
+      entryPoints:
+        - websecure
+      rule: Host(`ulanzi.local.theinquisitive.me`)
+      tls: {}
+      service: ulanzi
+
+  services:
+    paperless:
+      loadBalancer:
+        servers:
+          - url: http://172.16.20.52:8000
+        passHostHeader: true
+    archivebox:
+      loadBalancer:
+        servers:
+          - url: http://172.16.20.52:8001
+        passHostHeader: true
+    wallos:
+      loadBalancer:
+        servers:
+          - url: http://172.16.20.54:8282
+        passHostHeader: true
+    firefly:
+      loadBalancer:
+        servers:
+          - url: http://172.16.20.54
+        passHostHeader: true
+    immich:
+      loadBalancer:
+        servers:
+          - url: http://172.16.20.55:2283
+        passHostHeader: true
+    snipeit:
+      loadBalancer:
+        servers:
+          - url: http://172.16.20.48:8080
+        passHostHeader: true
+    ulanzi:
+      loadBalancer:
+        servers:
+          - url: http://172.16.30.15
+        passHostHeader: true

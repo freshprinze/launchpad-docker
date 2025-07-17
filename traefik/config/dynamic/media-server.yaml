@@ -1,0 +1,167 @@
+http:
+  routers:
+    plex:
+      entryPoints:
+        - websecure
+      rule: Host(`plex.local.theinquisitive.me`)
+      middlewares:
+        - default-headers
+      tls: {}
+      service: plex
+    jellyfin:
+      entryPoints:
+        - websecure
+      rule: Host(`jellyfin.local.theinquisitive.me`)
+      tls: {}
+      service: jellyfin
+    deluge:
+      entryPoints:
+        - websecure
+      rule: Host(`deluge.local.theinquisitive.me`)
+      tls: {}
+      service: deluge
+    sabnzbd:
+      entryPoints:
+        - websecure
+      rule: Host(`sabnzbd.local.theinquisitive.me`)
+      tls: {}
+      service: sabnzbd
+    prowlarr:
+      entryPoints:
+        - websecure
+      rule: Host(`prowlarr.local.theinquisitive.me`)
+      middlewares:
+        - default-headers
+      tls: {}
+      service: prowlarr
+    sonarr:
+      entryPoints:
+        - websecure
+      rule: Host(`sonarr.local.theinquisitive.me`)
+      middlewares:
+        - default-headers
+      tls: {}
+      service: sonarr
+    radarr:
+      entryPoints:
+        - websecure
+      rule: Host(`radarr.local.theinquisitive.me`)
+      middlewares:
+        - default-headers
+      tls: {}
+      service: radarr
+    lidarr:
+      entryPoints:
+        - websecure
+      rule: Host(`lidarr.local.theinquisitive.me`)
+      middlewares:
+        - default-headers
+      tls: {}
+      service: lidarr
+    readarr:
+      entryPoints:
+        - websecure
+      rule: Host(`readarr.local.theinquisitive.me`)
+      middlewares:
+        - default-headers
+      tls: {}
+      service: readarr
+    bazarr:
+      entryPoints:
+        - websecure
+      rule: Host(`bazarr.local.theinquisitive.me`)
+      middlewares:
+        - default-headers
+      tls: {}
+      service: bazarr
+    overseerr:
+      entryPoints:
+        - websecure
+      rule: Host(`overseerr.local.theinquisitive.me`)
+      middlewares:
+        - default-headers
+      tls: {}
+      service: overseerr
+    jellyseerr:
+      entryPoints:
+        - websecure
+      rule: Host(`jellyseerr.local.theinquisitive.me`)
+      middlewares:
+        - default-headers
+      tls: {}
+      service: jellyseerr
+    huntarr:
+      entryPoints:
+        - websecure
+      rule: Host(`huntarr.local.theinquisitive.me`)
+      tls: {}
+      service: huntarr
+      middlewares:
+        - default-headers
+
+  services:
+    plex:
+      loadBalancer:
+        servers:
+          - url: http://172.16.20.51:32400
+        passHostHeader: true
+    jellyfin:
+      loadBalancer:
+        servers:
+          - url: http://172.16.20.51:8096
+        passHostHeader: true
+    deluge:
+      loadBalancer:
+        servers:
+          - url: http://172.16.20.51:8112
+        passHostHeader: true
+    sabnzbd:
+      loadBalancer:
+        servers:
+          - url: http://172.16.20.51:8080
+        passHostHeader: true
+    prowlarr:
+      loadBalancer:
+        servers:
+          - url: http://172.16.20.51:9696
+        passHostHeader: true
+    sonarr:
+      loadBalancer:
+        servers:
+          - url: http://172.16.20.51:8989
+        passHostHeader: true
+    radarr:
+      loadBalancer:
+        servers:
+          - url: http://172.16.20.51:7878
+        passHostHeader: true
+    lidarr:
+      loadBalancer:
+        servers:
+          - url: http://172.16.20.51:8686
+        passHostHeader: true
+    readarr:
+      loadBalancer:
+        servers:
+          - url: http://172.16.20.51:8787
+        passHostHeader: true
+    bazarr:
+      loadBalancer:
+        servers:
+          - url: http://172.16.20.51:6767
+        passHostHeader: true
+    overseerr:
+      loadBalancer:
+        servers:
+          - url: http://172.16.20.51:5055
+        passHostHeader: true
+    jellyseerr:
+      loadBalancer:
+        servers:
+          - url: http://172.16.20.51:5056
+        passHostHeader: true
+    huntarr:
+      loadBalancer:
+        servers:
+          - url: http://172.16.20.51:9705
+        passHostHeader: true

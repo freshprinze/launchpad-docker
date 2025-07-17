@@ -1,0 +1,15 @@
+http:
+  routers:
+    pialert:
+      entryPoints:
+        - websecure
+      rule: Host(`pialert.local.theinquisitive.me`)
+      tls: {}
+      service: pialert
+
+  services:
+    pialert:
+      loadBalancer:
+        servers:
+          - url: http://172.16.20.8:20211
+        passHostHeader: true

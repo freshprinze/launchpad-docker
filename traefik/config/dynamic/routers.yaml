@@ -1,0 +1,30 @@
+http:
+  routers:
+    pfsense:
+      entryPoints:
+        - websecure
+      rule: Host(`pfsense.local.theinquisitive.me`)
+      middlewares:
+        - default-headers
+      tls: {}
+      service: pfsense
+    slt4g:
+      entryPoints:
+        - websecure
+      rule: Host(`slt4g.local.theinquisitive.me`)
+      tls: {}
+      service: slt4g
+
+  services:
+    pfsense:
+      loadBalancer:
+        serversTransport: insecureTransport
+        servers:
+          - url: https://192.168.99.1:10443
+        passHostHeader: true
+    slt4g:
+      loadBalancer:
+        serversTransport: insecureTransport
+        servers:
+          - url: https://192.168.99.1:10443
+        passHostHeader: true

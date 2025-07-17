@@ -1,0 +1,28 @@
+http:
+  routers:
+    antaresgo:
+      entryPoints:
+        - websecure
+      rule: Host(`antaresgo.local.theinquisitive.me`)
+      middlewares:
+        - default-headers
+      tls: {}
+      service: antaresgo
+    truenas:
+      entryPoints:
+        - websecure
+      rule: Host(`truenas.local.theinquisitive.me`)
+      tls: {}
+      service: truenas
+
+  services:
+    antaresgo:
+      loadBalancer:
+        servers:
+          - url: http://172.16.20.3:5000
+        passHostHeader: true
+    truenas:
+      loadBalancer:
+        servers:
+          - url: http://172.16.20.14
+        passHostHeader: true

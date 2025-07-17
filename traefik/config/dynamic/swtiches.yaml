@@ -1,0 +1,102 @@
+http:
+  routers:
+    mahsen:
+      entryPoints:
+        - websecure
+      rule: Host(`mahasen.local.theinquisitive.me`)
+      middlewares:
+        - default-headers
+      tls: {}
+      service: mahasen
+    gamunu:
+      entryPoints:
+        - websecure
+      rule: Host(`gamunu.local.theinquisitive.me`)
+      middlewares:
+        - default-headers
+      tls: {}
+      service: gamunu
+    gajaba:
+      entryPoints:
+        - websecure
+      rule: Host(`gajaba.local.theinquisitive.me`)
+      middlewares:
+        - default-headers
+      tls: {}
+      service: gajaba
+    vishwa:
+      entryPoints:
+        - websecure
+      rule: Host(`vishwa.local.theinquisitive.me`)
+      middlewares:
+        - default-headers
+      tls: {}
+      service: vishwa
+    vijaya:
+      entryPoints:
+        - websecure
+      rule: Host(`vijaya.local.theinquisitive.me`)
+      # middlewares:
+      #   - default-headers
+      tls: {}
+      service: vijaya
+    ravana:
+      entryPoints:
+        - websecure
+      rule: Host(`ravana.local.theinquisitive.me`)
+      middlewares:
+        - default-headers
+      tls: {}
+      service: ravana
+    omada:
+      entryPoints:
+        - websecure
+      rule: Host(`omada.local.theinquisitive.me`)
+      middlewares:
+        - default-headers
+      tls: {}
+      service: omada
+
+  services:
+    mahasen:
+      loadBalancer:
+        serversTransport: insecureTransport
+        servers:
+          - url: http://10.99.99.2
+        passHostHeader: true
+    gamunu:
+      loadBalancer:
+        serversTransport: insecureTransport
+        servers:
+          - url: http://10.99.99.3
+        passHostHeader: true
+    gajaba:
+      loadBalancer:
+        serversTransport: insecureTransport
+        servers:
+          - url: https://10.99.99.4
+        passHostHeader: true
+    vishwa:
+      loadBalancer:
+        serversTransport: insecureTransport
+        servers:
+          - url: http://10.99.99.8
+        passHostHeader: true
+    vijaya:
+      loadBalancer:
+        serversTransport: insecureTransport
+        servers:
+          - url: http://10.99.99.11
+        passHostHeader: true
+    ravana:
+      loadBalancer:
+        serversTransport: insecureTransport
+        servers:
+          - url: http://10.99.99.10
+        passHostHeader: true
+    omada:
+      loadBalancer:
+        serversTransport: insecureTransport
+        servers:
+          - url: https://10.99.99.5
+        passHostHeader: true

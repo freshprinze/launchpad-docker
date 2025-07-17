@@ -1,0 +1,80 @@
+http:
+  routers:
+    srv-pavo:
+      entryPoints:
+        - websecure
+      rule: Host(`pavo.local.theinquisitive.me`)
+      middlewares:
+        - default-headers
+      tls: {}
+      service: srv-pavo
+    srv-octans:
+      entryPoints:
+        - websecure
+      rule: Host(`octans.local.theinquisitive.me`)
+      middlewares:
+        - default-headers
+      tls: {}
+      service: srv-octans
+    srv-atlas:
+      entryPoints:
+        - websecure
+      rule: Host(`atlas.local.theinquisitive.me`)
+      middlewares:
+        - default-headers
+      tls: {}
+      service: srv-atlas
+    srv-capella:
+      entryPoints:
+        - websecure
+      rule: Host(`capella.local.theinquisitive.me`)
+      middlewares:
+        - default-headers
+      tls: {}
+      service: srv-capella
+    srv-auriga:
+      entryPoints:
+        - websecure
+      rule: Host(`auriga.local.theinquisitive.me`)
+      middlewares:
+        - default-headers
+      tls: {}
+      service: srv-auriga
+    srv-pbs:
+      entryPoints:
+        - websecure
+      rule: Host(`pbs.local.theinquisitive.me`)
+      tls: {}
+      service: srv-pbs
+
+  services:
+    srv-pavo:
+      loadBalancer:
+        servers:
+          - url: https://172.16.20.9:8006
+        # passHostHeader: true
+    srv-octans:
+      loadBalancer:
+        servers:
+          - url: https://172.16.20.12:8006
+        # passHostHeader: true
+    srv-atlas:
+      loadBalancer:
+        servers:
+          - url: https://172.16.20.2:8006
+        passHostHeader: true
+    srv-capella:
+      loadBalancer:
+        servers:
+          - url: https://172.16.20.5:8006
+        # passHostHeader: true
+    srv-auriga:
+      loadBalancer:
+        servers:
+          - url: https://172.16.20.10:8006
+        passHostHeader: true
+    srv-pbs:
+      loadBalancer:
+        servers:
+          - url: https://172.16.20.4:8007
+        passHostHeader: true
