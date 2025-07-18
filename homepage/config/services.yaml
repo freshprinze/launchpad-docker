@@ -37,7 +37,7 @@
         description: home
 
     - Scryped:
-        icon: https://www.scrypted.app/images/web_hi_res_512.png
+        icon: /icons/scrypted.png
         href: "{{HOMEPAGE_VAR_SCRYPTED_URL}}"
         description: Mgmt Console
 
@@ -303,7 +303,7 @@
         href: "{{HOMEPAGE_VAR_BAZARR_URL}}"
 
     - Huntarr:
-        icon: huntarr.svg
+        icon: /icons/huntarr.png
         href: "{{HOMEPAGE_VAR_HUNTARR_URL}}"
 
     - Deluge:
@@ -331,7 +331,7 @@
         description: CyberPower PDU
 
     - Growatt Server:
-        icon: /icons/growatt.svg
+        icon: /icons/growatt.png
         href: "{{HOMEPAGE_VAR_GROWATT_SERVER_URL}}"
         description: Growatt Server
 
