@@ -14,6 +14,14 @@ http:
       rule: Host(`truenas.local.theinquisitive.me`)
       tls: {}
       service: truenas
+    minio:
+      entryPoints:
+        - websecure
+      rule: Host(`minio.local.theinquisitive.me`)
+      middlewares:
+        - default-headers
+      tls: {}
+      service: minio
 
   services:
     antaresgo:
@@ -26,3 +34,14 @@ http:
         servers:
           - url: http://172.16.20.14
         passHostHeader: true
+    minio:
+      loadBalancer:
+        servers:
+          - url: "http://172.16.20.56:9001"
+          - url: "http://172.16.20.57:9001"
+          - url: "http://172.16.20.58:9001"
+          - url: "http://172.16.20.59:9001"
+        healthCheck:
+          path: "/minio/health/live"
+          interval: "30s"
+          timeout: "5s"
